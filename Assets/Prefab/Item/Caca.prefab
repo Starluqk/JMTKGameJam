@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9131349874739891045}
   - component: {fileID: 6974186305413831934}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

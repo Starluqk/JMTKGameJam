@@ -10,12 +10,13 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private TextMeshProUGUI resultTextVictory;
     [SerializeField] private GameObject endPanel;
+    [SerializeField] private GameObject victoryPanel;
 
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
 
-    [Tooltip("Liste de tous les Layers comptabilisés comme objets/taches à éliminer")]
     [SerializeField] private List<LayerMask> trashLayers = new List<LayerMask>();
 
     [SerializeField] private string scorePrefix = "Score : ";
@@ -44,6 +45,9 @@ public class ScoreManager : MonoBehaviour
 
         if (endPanel != null)
             endPanel.SetActive(false);
+
+        if (victoryPanel != null)
+            victoryPanel.SetActive(false);
 
         UpdateScoreUI();
         UpdateTimerUI();
@@ -88,7 +92,7 @@ public class ScoreManager : MonoBehaviour
         if (timerText != null)
         {
             int seconds = Mathf.CeilToInt(timeRemaining);
-            timerText.text = $"Temps : {seconds}s";
+            timerText.text = $"Time : {seconds}s";
         }
     }
 
@@ -112,17 +116,32 @@ public class ScoreManager : MonoBehaviour
             percentageCleaned = 100;
         }
 
-        if (endPanel != null)
+        if (percentageCleaned >= 90)
         {
-            endPanel.SetActive(true);
+            // Victoire (90%)
+            if (victoryPanel != null)
+            {
+                victoryPanel.SetActive(true);
+            }
+            else if (endPanel != null)
+            {
+                endPanel.SetActive(true);
+            }
+        }
+        else
+        {
+            // Défaite (< 90%)
+            if (endPanel != null)
+            {
+                endPanel.SetActive(true);
+            }
         }
 
         if (resultText != null)
         {
-            resultText.text = $"TEMPS ÉCOULÉ !\n\nScore : {currentScore}\nDéchets éliminés : {percentageCleaned}%";
+            resultText.text = $"TIME OUT !\n\nScore : {currentScore}\nCleared trash : {percentageCleaned}%";
+            resultTextVictory.text = $"TIME OUT !\n\nScore : {currentScore}\nCleared trash : {percentageCleaned}%";
         }
-
-        Debug.Log($"Fin de partie ! Score : {currentScore} | Déchets nettoyés : {percentageCleaned}% ({cleanedTrash}/{initialTrashCount})");
     }
 
     private int CountTrashObjects()
@@ -143,6 +162,7 @@ public class ScoreManager : MonoBehaviour
 
         return count;
     }
+
     private bool IsObjectInAnyTrashLayer(int objectLayer)
     {
         foreach (LayerMask layerMask in trashLayers)
