@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3740435708342032789}
   - component: {fileID: 5793840442123322069}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canap_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4153408150156168543}
   - component: {fileID: 5724164245498449304}
   - component: {fileID: 1088868698026732358}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1.74, y: -1.67, z: 0}
-  m_LocalScale: {x: 3.6746209, y: 1.3818, z: 1.3818}
+  m_LocalScale: {x: 3.6746213, y: 1.3818002, z: 1.3818}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3740435708342032789}
