@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3386402932124468527}
   - component: {fileID: 7801116304433604079}
   - component: {fileID: 4052835706134105359}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Item
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7412441442332916518}
   - component: {fileID: 6528694339253163469}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pixil-frame-0 (7)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
