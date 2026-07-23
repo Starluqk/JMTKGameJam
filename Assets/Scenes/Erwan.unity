@@ -171,32 +171,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChickenIdle_0
       objectReference: {fileID: 0}
-    - target: {fileID: 7082663734092173142, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
-      propertyPath: m_LinearDamping
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7082663734092173142, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
-      propertyPath: m_AngularDamping
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8458959152887488069, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 744389695}
-    - target: {fileID: 8458959152887488069, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
-      propertyPath: chickenSprite
-      value: 
-      objectReference: {fileID: 702342446}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
---- !u!212 &702342446 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2990261710006010802, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
-  m_PrefabInstance: {fileID: 136666058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744389695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7330010786697740784, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
