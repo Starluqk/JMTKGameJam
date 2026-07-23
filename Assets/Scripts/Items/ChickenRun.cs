@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChickenRun : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed = 4f;
     private float keepSpeed;
     public float distanceView = 3f;
 
