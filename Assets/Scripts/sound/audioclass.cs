@@ -22,16 +22,15 @@ public class audioclass
     {
         foreach (var soundClass in soundClass)
         {
-            source.Stop();
             if (name == soundClass._clipName)
             {
-                source.PlayOneShot(soundClass._clip);
+                if (source.isPlaying == false)
+                {
+                    source.PlayOneShot(soundClass._clip);
+                }
             }
 
-            if (source.isPlaying == false)
-            {
-                source.PlayOneShot(soundClass._clip);
-            }
+            
         }
     }
 
