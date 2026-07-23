@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireScript : MonoBehaviour
@@ -44,5 +45,6 @@ public class FireScript : MonoBehaviour
     private void SetRandomTime()
     {
         _timeToExtend = Random.Range(_minTimeToExtend, _maxTimeToExtend);
+        
     }
 }
