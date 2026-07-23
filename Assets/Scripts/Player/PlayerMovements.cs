@@ -9,45 +9,43 @@ public class PlayerMovements : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCamera;
     private Vector2 movementInput;
+    private Vector2 mouseWorldPosition;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Récupère la caméra principale pour convertir la position de la souris
         mainCamera = Camera.main;
     }
 
     private void Update()
     {
-        // 1. Lecture des entrées clavier
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        // 2. Orientation vers la souris
-        RotateTowardsMouse();
+        if (mainCamera != null)
+        {
+            Vector3 mouseScreenPosition = Input.mousePosition;
+            mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+        }
     }
 
     private void FixedUpdate()
     {
-        // Applique le déplacement sans toucher à la rotation
         rb.linearVelocity = movementInput * moveSpeed;
+
+        RotateTowardsMouse();
     }
 
     private void RotateTowardsMouse()
     {
-        // Récupère la position de la souris à l'écran et la convertit en coordonnées World
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+        Vector2 lookDirection = mouseWorldPosition - rb.position;
 
-        // Calcule la direction entre le joueur et la souris
-        Vector2 lookDirection = (Vector2)mouseWorldPosition - rb.position;
+        if (lookDirection.sqrMagnitude > 0.001f)
+        {
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
-        // Calcule l'angle en degrés
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-
-        // Applique la rotation sur l'axe Z
-        rb.rotation = angle;
+            rb.MoveRotation(angle);
+        }
     }
 }

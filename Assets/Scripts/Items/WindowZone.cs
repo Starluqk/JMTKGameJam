@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class TrashZone : MonoBehaviour
+public class WindowZone : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField] private LayerMask trashLayer;
+
+    [SerializeField] private LayerMask windowLayer;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,11 +13,11 @@ public class TrashZone : MonoBehaviour
 
     private void CheckAndDestroyItem(GameObject obj)
     {
-        if ((trashLayer.value & (1 << obj.layer)) != 0)
+        if ((windowLayer.value & (1 << obj.layer)) != 0)
         {
             if (ScoreManager.Instance != null)
             {
-                ScoreManager.Instance.AddScore(100);
+                ScoreManager.Instance.AddScore(200);
             }
 
             Destroy(obj);

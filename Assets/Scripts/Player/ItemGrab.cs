@@ -5,16 +5,19 @@ public class ItemGrabber : MonoBehaviour
     [Header("Détection")]
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float grabRadius = 1.5f;
+    public bool chickenIsGrabbed = false;
 
-    [Header("Physique d'Attraction")]
+    [Header("Physique d'Attraction & Lancer")]
     [Range(0.01f, 1f)]
     [SerializeField] private float smoothTime = 0.1f;
     [SerializeField] private float defaultItemDamping = 10f;
+    [SerializeField] private float throwForce = 12f;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
     [SerializeField] private string isCarryingBool = "IsCarrying";
     [SerializeField] private string releaseTrigger = "Release";
+    [SerializeField] private string throwTrigger = "Throw";
 
     private Rigidbody2D grabbedRb;
     private Vector2 currentVelocity = Vector2.zero;
@@ -35,6 +38,11 @@ public class ItemGrabber : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             ReleaseItem();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ThrowItem();
         }
     }
 
@@ -70,6 +78,8 @@ public class ItemGrabber : MonoBehaviour
                     grabbedRb = rb;
                     grabbedRb.linearDamping = defaultItemDamping;
 
+                    chickenIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Chicken"));
+
                     if (animator != null)
                     {
                         animator.SetBool(isCarryingBool, true);
@@ -87,10 +97,41 @@ public class ItemGrabber : MonoBehaviour
             grabbedRb.linearDamping = defaultItemDamping;
             grabbedRb = null;
 
+            chickenIsGrabbed = false;
+
             if (animator != null)
             {
                 animator.SetBool(isCarryingBool, false);
                 animator.SetTrigger(releaseTrigger);
+            }
+        }
+    }
+
+    private void ThrowItem()
+    {
+        if (grabbedRb != null)
+        {
+            Rigidbody2D rbToThrow = grabbedRb;
+
+            grabbedRb.linearDamping = defaultItemDamping;
+            grabbedRb = null;
+
+            Vector2 throwDirection = transform.right;
+
+            rbToThrow.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+
+            if (animator != null)
+            {
+                animator.SetBool(isCarryingBool, false);
+
+                if (!string.IsNullOrEmpty(throwTrigger))
+                {
+                    animator.SetTrigger(throwTrigger);
+                }
+                else
+                {
+                    animator.SetTrigger(releaseTrigger);
+                }
             }
         }
     }
