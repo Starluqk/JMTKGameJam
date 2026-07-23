@@ -5,11 +5,11 @@ public class ItemGrabber : MonoBehaviour
     [Header("Détection")]
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float grabRadius = 1.5f;
-    [SerializeField] private LayerMask itemLayer;
 
     [Header("Physique d'Attraction")]
     [Range(0.01f, 1f)]
     [SerializeField] private float smoothTime = 0.1f;
+    [SerializeField] private float defaultItemDamping = 10f;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -40,17 +40,26 @@ public class ItemGrabber : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (grabbedRb != null)
+        if (grabbedRb == null)
         {
-            Vector2 targetPosition = holdPoint.position;
-            Vector2 newPosition = Vector2.SmoothDamp(grabbedRb.position, targetPosition, ref currentVelocity, smoothTime);
-            grabbedRb.MovePosition(newPosition);
+            currentVelocity = Vector2.zero;
+
+            if (animator != null && animator.GetBool(isCarryingBool))
+            {
+                animator.SetBool(isCarryingBool, false);
+                animator.SetTrigger(releaseTrigger);
+            }
+            return;
         }
+
+        Vector2 targetPosition = holdPoint.position;
+        Vector2 newPosition = Vector2.SmoothDamp(grabbedRb.position, targetPosition, ref currentVelocity, smoothTime);
+        grabbedRb.MovePosition(newPosition);
     }
 
     private void TryGrabItem()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(holdPoint.position, grabRadius, itemLayer);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(holdPoint.position, grabRadius);
 
         foreach (Collider2D collider in hitColliders)
         {
@@ -59,7 +68,7 @@ public class ItemGrabber : MonoBehaviour
                 if (collider.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
                 {
                     grabbedRb = rb;
-                    grabbedRb.linearDamping = 5f;
+                    grabbedRb.linearDamping = defaultItemDamping;
 
                     if (animator != null)
                     {
@@ -75,7 +84,7 @@ public class ItemGrabber : MonoBehaviour
     {
         if (grabbedRb != null)
         {
-            grabbedRb.linearDamping = 0f;
+            grabbedRb.linearDamping = defaultItemDamping;
             grabbedRb = null;
 
             if (animator != null)

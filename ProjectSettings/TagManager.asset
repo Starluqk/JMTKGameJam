@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - item
+  - trash
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - Item
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Trash
+  - TrashCan
+  - Balais
   - 
   - 
   - 
