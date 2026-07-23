@@ -13,16 +13,19 @@ public class ChickenRun : MonoBehaviour
     private ItemGrabber grabber;
 
     public GameObject player;
+
     void Start()
     {
         keepSpeed = speed;
         animator = GetComponent<Animator>();
-        grabber = FindAnyObjectByType<ItemGrabber>();
-    }
 
+        grabber = FindFirstObjectByType<ItemGrabber>();
+            FindPlayerByLayer();
+    }
 
     void Update()
     {
+
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
         if (distance < distanceView && distance > 1.8f || grabber.chickenIsGrabbed == false && distance < 1.8f)
@@ -39,12 +42,10 @@ public class ChickenRun : MonoBehaviour
             {
                 chickenSprite.flipX = false;
             }
-
             else
             {
                 chickenSprite.flipX = true;
             }
-
         }
 
         if (grabber.chickenIsGrabbed == true || distance > distanceView)
@@ -52,11 +53,34 @@ public class ChickenRun : MonoBehaviour
             speed = 0f;
             animator.SetBool(runningBool, false);
         }
+    }
+    private void FindPlayerByLayer()
+    {
+        int playerLayer = LayerMask.NameToLayer("Player");
 
+#pragma warning disable 0618
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+#pragma warning restore 0618
 
-       
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.layer == playerLayer)
+            {
+                if (obj.transform.parent != null)
+                {
+                    player = obj.transform.parent.gameObject;
+                }
+                else
+                {
+                    player = obj;
+                }
+                break;
+            }
+        }
 
-               
+        if (player == null)
+        {
+            Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a été trouvé dans la scène !");
+        }
     }
 }
-

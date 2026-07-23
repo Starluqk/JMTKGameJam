@@ -152,4 +152,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindowZone
   windowLayer:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 163840
