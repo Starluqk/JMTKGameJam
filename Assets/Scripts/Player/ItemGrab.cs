@@ -5,6 +5,7 @@ public class ItemGrabber : MonoBehaviour
     [Header("Détection")]
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float grabRadius = 1.5f;
+    [SerializeField] private float holdDistance = 1.5f;
     public bool chickenIsGrabbed = false;
 
     [Header("Physique d'Attraction & Lancer")]
@@ -21,15 +22,21 @@ public class ItemGrabber : MonoBehaviour
 
     private Rigidbody2D grabbedRb;
     private Vector2 currentVelocity = Vector2.zero;
+    private Camera mainCamera;
+    private Vector2 grabDirection = Vector2.up;
 
     private void Awake()
     {
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        mainCamera = Camera.main;
     }
 
     private void Update()
     {
+        UpdateHoldPointPosition();
+
         if (Input.GetMouseButtonDown(0))
         {
             TryGrabItem();
@@ -43,6 +50,21 @@ public class ItemGrabber : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ThrowItem();
+        }
+    }
+
+    private void UpdateHoldPointPosition()
+    {
+        if (mainCamera == null || holdPoint == null) return;
+
+        Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 direction = ((Vector2)mouseWorldPos - (Vector2)transform.position).normalized;
+
+        if (direction != Vector2.zero)
+        {
+            grabDirection = direction;
+            holdPoint.position = (Vector2)transform.position + grabDirection * holdDistance;
         }
     }
 
@@ -116,9 +138,10 @@ public class ItemGrabber : MonoBehaviour
             grabbedRb.linearDamping = defaultItemDamping;
             grabbedRb = null;
 
-            Vector2 throwDirection = transform.right;
+            chickenIsGrabbed = false;
 
-            rbToThrow.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+            rbToThrow.AddForce(grabDirection * throwForce, ForceMode2D.Impulse);
+            chickenIsGrabbed = false;
 
             if (animator != null)
             {
