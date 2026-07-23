@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -9,11 +10,14 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI resultText;
-    [SerializeField] private GameObject endPanel; 
+    [SerializeField] private GameObject endPanel;
 
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
-    [SerializeField] private LayerMask trashLayer;
+
+    [Tooltip("Liste de tous les Layers comptabilisés comme objets/taches à éliminer")]
+    [SerializeField] private List<LayerMask> trashLayers = new List<LayerMask>();
+
     [SerializeField] private string scorePrefix = "Score : ";
 
     private int currentScore = 0;
@@ -131,12 +135,23 @@ public class ScoreManager : MonoBehaviour
 
         foreach (GameObject obj in allObjects)
         {
-            if ((trashLayer.value & (1 << obj.layer)) != 0)
+            if (IsObjectInAnyTrashLayer(obj.layer))
             {
                 count++;
             }
         }
 
         return count;
+    }
+    private bool IsObjectInAnyTrashLayer(int objectLayer)
+    {
+        foreach (LayerMask layerMask in trashLayers)
+        {
+            if ((layerMask.value & (1 << objectLayer)) != 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
