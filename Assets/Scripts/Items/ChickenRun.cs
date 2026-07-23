@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChickenRun : MonoBehaviour
 {
+    private float destinationTimer = 0f;
+    [SerializeField] private float updateDestinationEvery = 0.2f;
     private float speed = 5f;
     private float keepSpeed;
     public float distanceView = 3.5f;
@@ -13,30 +16,46 @@ public class ChickenRun : MonoBehaviour
     private ItemGrabber grabber;
 
     public GameObject player;
+    
+    private NavMeshAgent agent;
 
     void Start()
     {
-        keepSpeed = speed;
-        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        Debug.Log(agent.isOnNavMesh);
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
+        keepSpeed = speed;
+        agent.speed = speed;
+
+        animator = GetComponent<Animator>();
         grabber = FindFirstObjectByType<ItemGrabber>();
-            FindPlayerByLayer();
+
+        FindPlayerByLayer();
     }
 
     void Update()
     {
-
-        float distance = Vector2.Distance(transform.position, player.transform.position);
+        destinationTimer += Time.deltaTime;
+        float distance = Vector2.Distance(agent.nextPosition, player.transform.position);
 
         if (distance < distanceView && distance > 1.8f || grabber.chickenIsGrabbed == false && distance < 1.8f)
         {
-            speed = keepSpeed;
+            agent.isStopped = false;
+            agent.speed = keepSpeed;
 
             animator.SetBool(runningBool, true);
 
-            Vector2 run = (transform.position - player.transform.position).normalized;
+            if (destinationTimer >= updateDestinationEvery)
+            {
+                destinationTimer = 0f;
 
-            transform.Translate((run * speed) * Time.deltaTime);
+                Vector3 direction = (agent.nextPosition - player.transform.position).normalized;
+                Vector3 destination = agent.nextPosition + direction * 2f;
+
+                agent.SetDestination(destination);
+            }
 
             if (player.transform.position.x > transform.position.x)
             {
@@ -50,9 +69,10 @@ public class ChickenRun : MonoBehaviour
 
         if (grabber.chickenIsGrabbed == true || distance > distanceView)
         {
-            speed = 0f;
+            agent.isStopped = true;
             animator.SetBool(runningBool, false);
         }
+        Debug.DrawLine(agent.nextPosition, agent.destination, Color.red);
     }
     private void FindPlayerByLayer()
     {
@@ -80,7 +100,7 @@ public class ChickenRun : MonoBehaviour
 
         if (player == null)
         {
-            Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a été trouvé dans la scène !");
+            Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a ï¿½tï¿½ trouvï¿½ dans la scï¿½ne !");
         }
     }
 }
