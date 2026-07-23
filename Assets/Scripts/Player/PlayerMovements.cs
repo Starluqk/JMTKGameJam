@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,10 +5,14 @@ public class PlayerMovements : MonoBehaviour
 {
     [Header("Déplacement")]
     [SerializeField] private float moveSpeed = 6f;
+
+    [Header("Composants")]
     public SpriteRenderer playerSprite;
-    private Rigidbody2D rb;
-    private Vector2 movementInput;
     private Animator animator;
+    private Rigidbody2D rb;
+
+    private Vector2 movementInput;
+
     private string Up = "GoingUp";
     private string Down = "GoingDown";
     private string Walk = "IsWalking";
@@ -17,6 +20,10 @@ public class PlayerMovements : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+        if (playerSprite == null)
+            playerSprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -26,42 +33,38 @@ public class PlayerMovements : MonoBehaviour
 
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        // 1. Gestion du Flip (Gauche / Droite)
-        if (moveX < 0)
+        bool pressUp = Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+        bool pressDown = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+        bool pressLeft = Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        bool pressRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+
+        if (pressLeft)
         {
             playerSprite.flipX = true;
         }
-        else if (moveX > 0)
+        else if (pressRight)
         {
             playerSprite.flipX = false;
         }
 
-        // 2. Priorité des animations selon la touche pressée
-        bool isMovingVertical = Mathf.Abs(moveY) > 0.1f;
-        bool isMovingHorizontal = Mathf.Abs(moveX) > 0.1f;
-
-        // Vers le HAUT
-        if (moveY > 0)
+        if (pressUp)
         {
             animator.SetBool(Up, true);
             animator.SetBool(Down, false);
             animator.SetBool(Walk, false);
         }
-        // Vers le BAS
-        else if (moveY < 0)
+        else if (pressDown)
         {
             animator.SetBool(Up, false);
             animator.SetBool(Down, true);
             animator.SetBool(Walk, false);
         }
-        // Gauche ou Droite
-        else if (isMovingHorizontal)
+        else if (pressLeft || pressRight)
         {
             animator.SetBool(Up, false);
             animator.SetBool(Down, false);
             animator.SetBool(Walk, true);
         }
-        // Immobile (Idle)
         else
         {
             animator.SetBool(Up, false);
