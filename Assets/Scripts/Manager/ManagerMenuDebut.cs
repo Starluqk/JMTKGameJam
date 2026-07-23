@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ManagerMenuDebut : MonoBehaviour
 {
     public Animator transition;
+    public Animator textFade;
     public void OnStart()
     {
         LoadNextScene();
@@ -23,6 +24,7 @@ public class ManagerMenuDebut : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
+        textFade.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
 
