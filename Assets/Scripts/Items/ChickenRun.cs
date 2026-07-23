@@ -30,5 +30,11 @@ public class ChickenRun : MonoBehaviour
         {
             speed = 0f;
         }
+
+
+        if(speed < 1)
+        {
+
+        }
     }
 }
