@@ -5,7 +5,7 @@ public class ChickenRun : MonoBehaviour
 {
     private float destinationTimer = 0f;
     [SerializeField] private float updateDestinationEvery = 0.2f;
-    private float speed = 5f;
+    private float speed = 10f;
     private float keepSpeed;
     public float distanceView = 3.5f;
     Animator animator;

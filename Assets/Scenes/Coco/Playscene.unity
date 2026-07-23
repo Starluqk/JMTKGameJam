@@ -8455,8 +8455,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: m_Speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: m_Height
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: m_Acceleration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
       propertyPath: m_AngularSpeed
-      value: 200
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676165032116815369, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: avoidancePriority
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 1525098023836192247, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8510,6 +8534,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6473122257212562062}
+    - target: {fileID: 8458959152887488069, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+      propertyPath: distanceView
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
