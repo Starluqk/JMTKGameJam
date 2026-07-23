@@ -7,6 +7,8 @@ public class ChickenRun : MonoBehaviour
     public float distanceView = 3f;
     Animator animator;
     private string runningBool = "isRunning";
+    private Vector3 position;
+    public SpriteRenderer chickenSprite;
 
     private ItemGrabber grabber;
 
@@ -18,7 +20,7 @@ public class ChickenRun : MonoBehaviour
         grabber = FindAnyObjectByType<ItemGrabber>();
     }
 
-    
+
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
@@ -31,18 +33,32 @@ public class ChickenRun : MonoBehaviour
 
             Vector2 run = (transform.position - player.transform.position).normalized;
 
-            transform.Translate((run *  speed)* Time.deltaTime);
+            transform.Translate((run * speed) * Time.deltaTime);
+
+            if (player.transform.position.x > transform.position.x)
+            {
+                chickenSprite.flipX = false;
+            }
+
+            else
+            {
+                chickenSprite.flipX = true;
+            }
+
         }
 
-        if (grabber.chickenIsGrabbed == true|| distance > distanceView)
+        if (grabber.chickenIsGrabbed == true || distance > distanceView)
         {
             speed = 0f;
         }
 
 
-        if(speed < 1)
+        if (speed < 1)
         {
             animator.SetBool(runningBool, false);
         }
+
+               
     }
 }
+
