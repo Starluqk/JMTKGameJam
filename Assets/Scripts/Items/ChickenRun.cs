@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ChickenRun : MonoBehaviour
 {
-    private float speed = 4f;
+    private float speed = 5f;
     private float keepSpeed;
-    public float distanceView = 3f;
+    public float distanceView = 3.5f;
     Animator animator;
     private string runningBool = "isRunning";
     private Vector3 position;
@@ -25,7 +25,7 @@ public class ChickenRun : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < distanceView && distance > 1.8f && grabber.chickenIsGrabbed == false)
+        if (distance < distanceView && distance > 1.8f || grabber.chickenIsGrabbed == false && distance < 1.8f)
         {
             speed = keepSpeed;
 
@@ -50,13 +50,11 @@ public class ChickenRun : MonoBehaviour
         if (grabber.chickenIsGrabbed == true || distance > distanceView)
         {
             speed = 0f;
-        }
-
-
-        if (speed < 1)
-        {
             animator.SetBool(runningBool, false);
         }
+
+
+       
 
                
     }

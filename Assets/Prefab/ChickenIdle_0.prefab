@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8458959152887488069}
   - component: {fileID: 7082663734092173142}
   - component: {fileID: 2971357742439077515}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ChickenIdle_0
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChickenRun
   distanceView: 3
+  chickenSprite: {fileID: 2990261710006010802}
   player: {fileID: 0}
 --- !u!50 &7082663734092173142
 Rigidbody2D:
@@ -143,8 +144,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 20
+  m_AngularDamping: 15
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
