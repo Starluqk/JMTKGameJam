@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
+    public static int _numberFire = 0;
     [SerializeField] private int _life = 100;
     [SerializeField] private float _minTimeToExtend = 1.5f;
     [SerializeField] private float _maxTimeToExtend = 5;
@@ -21,9 +22,14 @@ public class FireScript : MonoBehaviour
         time += Time.deltaTime;
         if (time > _timeToExtend)
         {
-            Vector2 direction = Random.insideUnitCircle.normalized;
-            Vector2 newPosition = (Vector2)transform.position + direction;
-            Instantiate(_fire, newPosition, Quaternion.identity);
+            if (_numberFire < 25)
+            {
+                Vector2 direction = Random.insideUnitCircle.normalized;
+                Vector2 newPosition = (Vector2)transform.position + direction;
+                Instantiate(_fire, newPosition, Quaternion.identity);
+                _numberFire++;
+            }
+            
             time = 0f;
             SetRandomTime();
         }
@@ -31,6 +37,7 @@ public class FireScript : MonoBehaviour
         if (_life <= 0)
         {
             Destroy(gameObject);
+            _numberFire--;
         }
     }
 
