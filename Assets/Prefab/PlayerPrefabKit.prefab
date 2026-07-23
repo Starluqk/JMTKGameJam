@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7270616207433245395}
   - component: {fileID: 8693034809633744701}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GrabZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2519505913156400024}
   - component: {fileID: 6253272485565538562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5315848180071056458}
   - component: {fileID: 7557543656116910581}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 416726659827660001}
   - component: {fileID: 6394743227702728935}
   - component: {fileID: 8363907937959097067}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
