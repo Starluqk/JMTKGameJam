@@ -8,11 +8,14 @@ public class ChickenRun : MonoBehaviour
     Animator animator;
     private string runningBool = "isRunning";
 
+    private ItemGrabber grabber;
+
     public GameObject player;
     void Start()
     {
         keepSpeed = speed;
         animator = GetComponent<Animator>();
+        grabber = FindAnyObjectByType<ItemGrabber>();
     }
 
     
@@ -20,7 +23,7 @@ public class ChickenRun : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < distanceView && distance > 1.8f)
+        if (distance < distanceView && distance > 1.8f && grabber.chickenIsGrabbed == false)
         {
             speed = keepSpeed;
 
@@ -31,7 +34,7 @@ public class ChickenRun : MonoBehaviour
             transform.Translate((run *  speed)* Time.deltaTime);
         }
 
-        if (distance < 1.5f || distance > distanceView)
+        if (grabber.chickenIsGrabbed == true|| distance > distanceView)
         {
             speed = 0f;
         }
