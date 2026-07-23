@@ -11,6 +11,7 @@ public class audioclass
     {
         foreach (var soundClass in soundClass)
         {
+            source.Stop();
             if (name == soundClass._clipName)
             {
                 source.PlayOneShot(soundClass._clip);
@@ -21,6 +22,7 @@ public class audioclass
     {
         foreach (var soundClass in soundClass)
         {
+            source.Stop();
             if (name == soundClass._clipName)
             {
                 source.PlayOneShot(soundClass._clip);
