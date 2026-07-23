@@ -1217,6 +1217,8 @@ MonoBehaviour:
     m_Bits: 64
   - serializedVersion: 2
     m_Bits: 2048
+  - serializedVersion: 2
+    m_Bits: 34816
   scorePrefix: 'Score : '
 --- !u!1 &5770638233291542324
 GameObject:
