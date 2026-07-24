@@ -46,6 +46,7 @@ public class ChickenRun : MonoBehaviour
         if (distance < distanceView && distance > 1.8f || grabber.chickenIsGrabbed == false && distance < 1.8f)
         {
             agent.isStopped = false;
+            playSound();
             agent.speed = keepSpeed;
 
             animator.SetBool(runningBool, true);
@@ -73,6 +74,7 @@ public class ChickenRun : MonoBehaviour
         if (grabber.chickenIsGrabbed == true || distance > distanceView)
         {
             agent.isStopped = true;
+            stopplaying();
             animator.SetBool(runningBool, false);
         }
         Debug.DrawLine(agent.nextPosition, agent.destination, Color.red);
@@ -109,7 +111,7 @@ public class ChickenRun : MonoBehaviour
 
     private void playSound()
     {
-        if (source.isPlaying == false)
+        if (source.isPlaying != true)
         {
             int randomNumber = Random.Range(0, 4);
             source.PlayOneShot(listSound[randomNumber]);
