@@ -11,6 +11,7 @@ public class OnTriggerWall : MonoBehaviour
     private float _wantedOpacity;
 
     private SpriteRenderer sr;
+    private int layer;
 
 
     private void Update()
@@ -38,7 +39,9 @@ public class OnTriggerWall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             sr = _wall.GetComponent<SpriteRenderer>();
+            layer = sr.sortingOrder;
             _wantedOpacity = _opacity;
+            sr.sortingOrder = 99;
         }
     }
 
@@ -47,6 +50,7 @@ public class OnTriggerWall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _wantedOpacity = 1f;
+            sr.sortingOrder = layer;
         }
     }
 

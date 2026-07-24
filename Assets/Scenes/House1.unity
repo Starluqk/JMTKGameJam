@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 86103061}
   - component: {fileID: 86103060}
   - component: {fileID: 86103063}
+  - component: {fileID: 86103064}
   m_Layer: 14
   m_Name: Bed A
   m_TagString: Untagged
@@ -278,6 +279,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &86103064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86103059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &257481995
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +304,7 @@ GameObject:
   - component: {fileID: 257481997}
   - component: {fileID: 257481996}
   - component: {fileID: 257481999}
+  - component: {fileID: 257482000}
   m_Layer: 14
   m_Name: NightStand A
   m_TagString: Untagged
@@ -432,6 +447,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &257482000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257481995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &346694026
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +472,7 @@ GameObject:
   - component: {fileID: 346694028}
   - component: {fileID: 346694027}
   - component: {fileID: 346694030}
+  - component: {fileID: 346694031}
   m_Layer: 14
   m_Name: Table A
   m_TagString: Untagged
@@ -586,6 +615,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &346694031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346694026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1001 &349341492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,6 +713,7 @@ GameObject:
   - component: {fileID: 365974173}
   - component: {fileID: 365974172}
   - component: {fileID: 365974175}
+  - component: {fileID: 365974176}
   m_Layer: 14
   m_Name: BookShelf
   m_TagString: Untagged
@@ -813,6 +856,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &365974176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365974171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &369015629
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +881,7 @@ GameObject:
   - component: {fileID: 369015631}
   - component: {fileID: 369015630}
   - component: {fileID: 369015633}
+  - component: {fileID: 369015634}
   m_Layer: 14
   m_Name: Sink
   m_TagString: Untagged
@@ -967,6 +1024,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &369015634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369015629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &558570230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1085,7 @@ GameObject:
   - component: {fileID: 685372578}
   - component: {fileID: 685372577}
   - component: {fileID: 685372581}
-  - component: {fileID: 685372580}
+  - component: {fileID: 685372582}
   m_Layer: 14
   m_Name: Couch
   m_TagString: Untagged
@@ -1142,19 +1212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &685372580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685372576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf04162742f2334697956cfb58c8842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerWall
-  _boxCollider: {fileID: 5468129047805631421, guid: 852d0f0ef1a6b564fbaf28693f2b515b, type: 3}
 --- !u!114 &685372581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1228,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &685372582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685372576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &854308299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1253,7 @@ GameObject:
   - component: {fileID: 854308301}
   - component: {fileID: 854308300}
   - component: {fileID: 854308303}
+  - component: {fileID: 854308304}
   m_Layer: 14
   m_Name: Bath
   m_TagString: Untagged
@@ -1325,6 +1396,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &854308304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854308299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &952588295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1421,7 @@ GameObject:
   - component: {fileID: 952588297}
   - component: {fileID: 952588296}
   - component: {fileID: 952588299}
+  - component: {fileID: 952588300}
   m_Layer: 14
   m_Name: NightStand B
   m_TagString: Untagged
@@ -1479,6 +1564,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &952588300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952588295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1066024874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1589,7 @@ GameObject:
   - component: {fileID: 1066024876}
   - component: {fileID: 1066024875}
   - component: {fileID: 1066024878}
+  - component: {fileID: 1066024879}
   m_Layer: 14
   m_Name: Poubelle
   m_TagString: Untagged
@@ -1608,6 +1707,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1066024879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066024874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1159117966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1764,7 @@ GameObject:
   - component: {fileID: 1178424664}
   - component: {fileID: 1178424663}
   - component: {fileID: 1178424666}
+  - component: {fileID: 1178424667}
   m_Layer: 14
   m_Name: Cuisine
   m_TagString: Untagged
@@ -1794,6 +1907,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1178424667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178424662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1228984047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +2982,7 @@ GameObject:
   - component: {fileID: 1298501485}
   - component: {fileID: 1298501484}
   - component: {fileID: 1298501487}
+  - component: {fileID: 1298501488}
   m_Layer: 14
   m_Name: Chair B
   m_TagString: Untagged
@@ -2998,6 +3125,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1298501488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298501483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1402239530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +3150,7 @@ GameObject:
   - component: {fileID: 1402239532}
   - component: {fileID: 1402239531}
   - component: {fileID: 1402239534}
+  - component: {fileID: 1402239535}
   m_Layer: 14
   m_Name: Toilet
   m_TagString: Untagged
@@ -3152,6 +3293,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1402239535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402239530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1443495625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,7 +3431,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_Sprite: {fileID: 846662620835391188, guid: 88aea8945e5bd4943a045061bcf66035, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3383,6 +3537,7 @@ GameObject:
   - component: {fileID: 1701130019}
   - component: {fileID: 1701130018}
   - component: {fileID: 1701130021}
+  - component: {fileID: 1701130022}
   m_Layer: 14
   m_Name: Bed B
   m_TagString: Untagged
@@ -3525,6 +3680,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1701130022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701130017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &1702504322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,6 +3832,7 @@ GameObject:
   - component: {fileID: 1943667551}
   - component: {fileID: 1943667550}
   - component: {fileID: 1943667553}
+  - component: {fileID: 1943667554}
   m_Layer: 14
   m_Name: Chair A(1)
   m_TagString: Untagged
@@ -3806,6 +3975,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1943667554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943667549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1001 &1973291268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3820,7 +4002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5626574339815979776, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.79
+      value: 21.42
       objectReference: {fileID: 0}
     - target: {fileID: 5626574339815979776, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3883,6 +4065,7 @@ GameObject:
   - component: {fileID: 2018558075}
   - component: {fileID: 2018558074}
   - component: {fileID: 2018558077}
+  - component: {fileID: 2018558078}
   m_Layer: 14
   m_Name: Chair A
   m_TagString: Untagged
@@ -4025,6 +4208,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &2018558078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018558073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &2031613810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,6 +4233,7 @@ GameObject:
   - component: {fileID: 2031613812}
   - component: {fileID: 2031613811}
   - component: {fileID: 2031613814}
+  - component: {fileID: 2031613815}
   m_Layer: 14
   m_Name: Table D
   m_TagString: Untagged
@@ -4179,6 +4376,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &2031613815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031613810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &2063263202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4401,7 @@ GameObject:
   - component: {fileID: 2063263204}
   - component: {fileID: 2063263203}
   - component: {fileID: 2063263206}
+  - component: {fileID: 2063263207}
   m_Layer: 14
   m_Name: Table C
   m_TagString: Untagged
@@ -4333,6 +4544,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &2063263207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063263202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1 &2073206583
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,6 +4568,7 @@ GameObject:
   - component: {fileID: 2073206585}
   - component: {fileID: 2073206584}
   - component: {fileID: 2073206586}
+  - component: {fileID: 2073206587}
   m_Layer: 14
   m_Name: Table B
   m_TagString: Untagged
@@ -4440,6 +4665,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &2073206587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073206583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0217e83d0c432b40b11e0822c5b7b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerObject
+  _boxCollider: {fileID: 5468129047805631421, guid: f8b83598ff0a4104eb5d3b98fff5876f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
