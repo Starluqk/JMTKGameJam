@@ -29,6 +29,7 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private string throwTrigger = "Throw";
 
     private Rigidbody2D grabbedRb;
+    private Collider2D grabbedCollider; // Variable ajoutée pour mémoriser le Collider
     private Vector2 currentVelocity = Vector2.zero;
     private Camera mainCamera;
     private Vector2 grabDirection = Vector2.up;
@@ -118,6 +119,9 @@ public class ItemGrabber : MonoBehaviour
                 if (collider.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
                 {
                     grabbedRb = rb;
+                    grabbedCollider = collider; // Mémorise le collider de l'objet
+                    grabbedCollider.isTrigger = true; // Passe en Trigger lors du grab
+
                     grabbedRb.linearDamping = defaultItemDamping;
 
                     chickenIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Chicken"));
@@ -139,11 +143,7 @@ public class ItemGrabber : MonoBehaviour
     {
         if (grabbedRb != null)
         {
-            grabbedRb.linearDamping = defaultItemDamping;
-            grabbedRb = null;
-
-            chickenIsGrabbed = false;
-            extinctorIsGrabbed = false;
+            ResetGrabbedItemPhysics();
 
             if (animator != null)
             {
@@ -161,11 +161,7 @@ public class ItemGrabber : MonoBehaviour
         {
             Rigidbody2D rbToThrow = grabbedRb;
 
-            grabbedRb.linearDamping = defaultItemDamping;
-            grabbedRb = null;
-
-            chickenIsGrabbed = false;
-            extinctorIsGrabbed = false;
+            ResetGrabbedItemPhysics();
 
             rbToThrow.AddForce(grabDirection * throwForce, ForceMode2D.Impulse);
 
@@ -185,6 +181,27 @@ public class ItemGrabber : MonoBehaviour
 
             ToggleArms(false);
         }
+    }
+
+    /// <summary>
+    /// Remet le collider en non-trigger et réinitialise les références de l'objet porté.
+    /// </summary>
+    private void ResetGrabbedItemPhysics()
+    {
+        if (grabbedCollider != null)
+        {
+            grabbedCollider.isTrigger = false; // Repasse le collider en normal
+            grabbedCollider = null;
+        }
+
+        if (grabbedRb != null)
+        {
+            grabbedRb.linearDamping = defaultItemDamping;
+            grabbedRb = null;
+        }
+
+        chickenIsGrabbed = false;
+        extinctorIsGrabbed = false;
     }
 
     #region Gestion Visuelle des Bras
