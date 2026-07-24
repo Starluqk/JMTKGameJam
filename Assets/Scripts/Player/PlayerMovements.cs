@@ -33,7 +33,6 @@ public class PlayerMovements : MonoBehaviour
 
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        // Flip Sprite (Gauche / Droite)
         if (moveX < 0)
         {
             playerSprite.flipX = true;
@@ -43,7 +42,6 @@ public class PlayerMovements : MonoBehaviour
             playerSprite.flipX = false;
         }
 
-        // Gestion des états d'animation en direct
         if (moveY > 0)
         {
             SetAnimState(up: true, down: false, walk: false);
