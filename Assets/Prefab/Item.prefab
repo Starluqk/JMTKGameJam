@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7412441442332916518}
   - component: {fileID: 6528694339253163469}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pixil-frame-0 (7)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

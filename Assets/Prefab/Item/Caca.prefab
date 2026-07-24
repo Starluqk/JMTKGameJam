@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2107669850183147099}
   - component: {fileID: 534906732148869448}
   - component: {fileID: 6880374312194385673}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: Caca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 1995845354126678457, guid: 38e416872cb444e428def434c68e8831, type: 3}
       propertyPath: m_Name
       value: Fly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995845354126678457, guid: 38e416872cb444e428def434c68e8831, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3948252800094476665, guid: 38e416872cb444e428def434c68e8831, type: 3}
       propertyPath: m_LocalPosition.x

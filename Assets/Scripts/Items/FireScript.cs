@@ -66,6 +66,7 @@ public class FireScript : MonoBehaviour
 
         if (_life <= 0)
         {
+            ScoreManager.Instance.AddScore(25);
             Destroy(gameObject);
             _numberFire--;
         }
