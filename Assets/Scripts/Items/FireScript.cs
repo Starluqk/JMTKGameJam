@@ -76,4 +76,9 @@ public class FireScript : MonoBehaviour
         _timeToExtend = Random.Range(_minTimeToExtend, _maxTimeToExtend);
         
     }
+
+    public void killFire()
+    {
+        _life--;
+    }
 }

@@ -10,6 +10,7 @@ public class SmokeAllarm : MonoBehaviour
     {
         if (FindAnyObjectByType<FireScript>().IsUnityNull())
         {
+            audioclass.source.Stop();
         }
         else
         {
