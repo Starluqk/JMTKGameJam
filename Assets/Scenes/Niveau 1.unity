@@ -1236,6 +1236,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60e04f5c5c24a7547bab719cccf29ee0, type: 3}
+--- !u!4 &1268472420 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6932841543733614169, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+  m_PrefabInstance: {fileID: 4353938077110164350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1321817772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2252,6 +2257,42 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[20].y
       value: 0.47265625
       objectReference: {fileID: 0}
+    - target: {fileID: 4935063157197904148, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935063157197904148, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Name
+      value: Spray
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637094182978333769, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 1268472420}
     - target: {fileID: 9056807346331328354, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
       propertyPath: m_Name
       value: Extinctor
@@ -2352,6 +2393,10 @@ PrefabInstance:
     - target: {fileID: 6565343716723803035, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932841543733614169, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7270616207433245395, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_LocalScale.x

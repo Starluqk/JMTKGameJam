@@ -2216,9 +2216,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 665532728859720263, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 916576042878983857, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Name
       value: PlayerPrefabKit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260092551084182488, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6394743227702728935, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: grabRadius
