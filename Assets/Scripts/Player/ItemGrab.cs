@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class ItemGrabber : MonoBehaviour
 {
-    [Header("Détection")]
+    [Header("Dï¿½tection")]
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float grabRadius = 1.5f;
     [SerializeField] private float holdDistance = 1.5f;
     public bool chickenIsGrabbed = false;
+    public bool extinctorIsGrabbed = false;
 
     [Header("Physique d'Attraction & Lancer")]
     [Range(0.01f, 1f)]
@@ -101,6 +102,7 @@ public class ItemGrabber : MonoBehaviour
                     grabbedRb.linearDamping = defaultItemDamping;
 
                     chickenIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Chicken"));
+                    extinctorIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Extinctor"));
 
                     if (animator != null)
                     {
@@ -120,6 +122,7 @@ public class ItemGrabber : MonoBehaviour
             grabbedRb = null;
 
             chickenIsGrabbed = false;
+            extinctorIsGrabbed = false;
 
             if (animator != null)
             {

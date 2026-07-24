@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 public class Extinctor : MonoBehaviour
 {
     [SerializeField] private Transform _playerTransform;
-
+    private ItemGrabber grabber;
     [SerializeField] private GameObject _spray;
     private Vector3 direction;
     private VisualEffect _vfxSpray;
@@ -16,12 +16,13 @@ public class Extinctor : MonoBehaviour
     void Start()
     {
         _vfxSpray = _spray.GetComponent<VisualEffect>();
+        grabber = FindFirstObjectByType<ItemGrabber>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && grabber.extinctorIsGrabbed)
         {
             _spray.SetActive(true);
             //Activer son extincteur ici
