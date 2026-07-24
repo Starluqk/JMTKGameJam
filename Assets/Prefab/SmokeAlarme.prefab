@@ -48,7 +48,7 @@ MonoBehaviour:
   audioclass:
     soundClass:
     - _clipName: bip
-      _clip: {fileID: 8300000, guid: c74784424112422469fce194567f5e1c, type: 3}
+      _clip: {fileID: 8300000, guid: ac3c0ad401481f544b311c705c2480d5, type: 3}
     source: {fileID: 4429677827632532172}
   flame: {fileID: 4782424318651709883, guid: cb7645649b8560c4faf90241a1f29f28, type: 3}
 --- !u!1 &8556369524415800950

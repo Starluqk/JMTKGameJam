@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.Audio;
 
 public class Extinctor : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Extinctor : MonoBehaviour
     private VisualEffect _vfxSpray;
     [SerializeField] private float distanceMax = 2.5f;
     [SerializeField] private float angleMax = 15f;
+    [SerializeField] private audioclass audioclass;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +27,7 @@ public class Extinctor : MonoBehaviour
         if (Input.GetMouseButton(1) && grabber.extinctorIsGrabbed)
         {
             _spray.SetActive(true);
-            //Activer son extincteur ici
+            audioclass.playClipOnLoop("son");
             direction =transform.position -  _playerTransform.position;
             direction.z = 0;
             _vfxSpray.SetVector3("Spray", direction);
@@ -61,7 +63,7 @@ public class Extinctor : MonoBehaviour
         else
         {
             _spray.SetActive(false);
-            //Désctiver son extincteur ici
+            audioclass.stopAudio();
         }
     }
 }
