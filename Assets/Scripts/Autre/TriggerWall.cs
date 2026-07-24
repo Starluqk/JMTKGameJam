@@ -18,7 +18,7 @@ public class TriggerWall : MonoBehaviour
             
             float size = wallSprite.bounds.size.x / transform.lossyScale.x;
             Debug.Log(gameObject + " " + size);
-            Vector2 vectorSize = new Vector2(size, 0.35f);
+            Vector2 vectorSize = new Vector2(size, 0.4f);
             triggerZone.size = vectorSize;
         }
     }
