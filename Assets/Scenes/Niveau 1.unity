@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoad
       objectReference: {fileID: 0}
+    - target: {fileID: 7270027290067161936, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8559722878434711316, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 561.4467
@@ -1983,6 +1987,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5960655967401759431, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960655967401759431, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 308
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445505194377634736, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -847
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445505194377634736, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 429
+      objectReference: {fileID: 0}
     - target: {fileID: 8695241606510097316, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.70129
@@ -2272,6 +2292,10 @@ PrefabInstance:
     - target: {fileID: 397452445724877267, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 665532728859720263, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 916576042878983857, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Name

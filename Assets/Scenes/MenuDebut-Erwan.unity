@@ -153,10 +153,10 @@ RectTransform:
   - {fileID: 169364534}
   m_Father: {fileID: 1487182811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 0.5}
-  m_AnchorMax: {x: 0.25, y: 0.55}
-  m_AnchoredPosition: {x: -345.32172, y: 17.503662}
-  m_SizeDelta: {x: 288, y: 47.10611}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -574, y: 69}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94953343
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.15
+  m_fontSize: 72
   m_fontSizeBase: 24.39
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -499,10 +499,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1487182811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.37, y: 0.7}
-  m_AnchorMax: {x: 0.63, y: 0.8}
-  m_AnchoredPosition: {x: 56.053284, y: 153.85364}
-  m_SizeDelta: {x: 499.19995, y: 94.21216}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40, y: 373}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164181175
 MonoBehaviour:
@@ -551,8 +551,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.1
-  m_fontSizeBase: 57.1
+  m_fontSize: 111.02
+  m_fontSizeBase: 111.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.15
+  m_fontSize: 72
   m_fontSizeBase: 24.39
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -996,10 +996,10 @@ RectTransform:
   - {fileID: 161264160}
   m_Father: {fileID: 1487182811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 0.3}
-  m_AnchorMax: {x: 0.25, y: 0.35}
-  m_AnchoredPosition: {x: -345.32172, y: -103.696335}
-  m_SizeDelta: {x: 288, y: 47.10605}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -571, y: -218}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806747987
 MonoBehaviour:
@@ -1026,7 +1026,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1103,6 +1103,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58949717262747992, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1120.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 58949717262747992, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 548.8547
+      objectReference: {fileID: 0}
+    - target: {fileID: 58949717262747992, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.44677734
+      objectReference: {fileID: 0}
+    - target: {fileID: 58949717262747992, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.21850586
+      objectReference: {fileID: 0}
     - target: {fileID: 3802951569146831241, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -1157,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8880828163879022529, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
