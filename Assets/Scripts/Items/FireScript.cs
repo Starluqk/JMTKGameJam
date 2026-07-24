@@ -31,14 +31,12 @@ public class FireScript : MonoBehaviour
                 Vector3 target = transform.position + (Vector3)direction;
 
                 NavMeshHit hit;
-                Debug.Log(NavMesh.SamplePosition(transform.position, out hit, 0.2f, NavMesh.AllAreas));
                 if (NavMesh.SamplePosition(target, out hit, 1f, NavMesh.AllAreas))
                 {
                     // Cherche le point navigable le plus proche du feu actuel
                     NavMeshHit startHit;
                     if (!NavMesh.SamplePosition(transform.position, out startHit, 2f, NavMesh.AllAreas))
                     {
-                        Debug.Log("Le feu n'est plus proche du NavMesh");
                         return;
                     }
 
@@ -51,8 +49,7 @@ public class FireScript : MonoBehaviour
                         path
                     );
 
-                    Debug.Log($"PathFound : {pathFound}");
-                    Debug.Log($"Status : {path.status}");
+                   
 
                     if (pathFound && path.status == NavMeshPathStatus.PathComplete)
                     {

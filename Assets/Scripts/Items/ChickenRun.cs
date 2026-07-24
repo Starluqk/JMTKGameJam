@@ -22,7 +22,7 @@ public class ChickenRun : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        Debug.Log(agent.isOnNavMesh);
+        
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
@@ -100,7 +100,7 @@ public class ChickenRun : MonoBehaviour
 
         if (player == null)
         {
-            Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a �t� trouv� dans la sc�ne !");
+            Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a été trouvé dans la scène !");
         }
     }
 }
