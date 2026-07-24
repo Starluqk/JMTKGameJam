@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _life: 100
-  _minTimeToExtend: 1.5
-  _maxTimeToExtend: 5
+  _minTimeToExtend: 3
+  _maxTimeToExtend: 10
   _fire: {fileID: 4782424318651709883}
 --- !u!95 &8387809946217770982
 Animator:
