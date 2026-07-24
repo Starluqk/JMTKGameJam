@@ -24,6 +24,7 @@ public class Extinctor : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             _spray.SetActive(true);
+            //Activer son extincteur ici
             direction =transform.position -  _playerTransform.position;
             direction.z = 0;
             _vfxSpray.SetVector3("Spray", direction);
@@ -59,6 +60,7 @@ public class Extinctor : MonoBehaviour
         else
         {
             _spray.SetActive(false);
+            //Désctiver son extincteur ici
         }
     }
 }
