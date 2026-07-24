@@ -6,16 +6,25 @@ public class PlayerMovements : MonoBehaviour
     [Header("Déplacement")]
     [SerializeField] private float moveSpeed = 6f;
 
+    [Tooltip("Plus la valeur est élevée, moins le personnage glisse.")]
+    [SerializeField] private float accelerationTime = 0.08f;
+
+    [Tooltip("Temps nécessaire pour s'arrêter complètement.")]
+    [SerializeField] private float decelerationTime = 0.18f;
+
     [Header("Composants")]
     public SpriteRenderer playerSprite;
+
     private Animator animator;
     private Rigidbody2D rb;
 
     private Vector2 movementInput;
+    private Vector2 currentVelocity;
+    private Vector2 velocityRef;
 
-    private string Up = "GoingUp";
-    private string Down = "GoingDown";
-    private string Walk = "IsWalking";
+    private readonly string Up = "GoingUp";
+    private readonly string Down = "GoingDown";
+    private readonly string Walk = "IsWalking";
 
     private void Awake()
     {
@@ -33,6 +42,7 @@ public class PlayerMovements : MonoBehaviour
 
         movementInput = new Vector2(moveX, moveY).normalized;
 
+        // Retourner le sprite
         if (moveX < 0)
         {
             playerSprite.flipX = true;
@@ -42,6 +52,7 @@ public class PlayerMovements : MonoBehaviour
             playerSprite.flipX = false;
         }
 
+        // Animations
         if (moveY > 0)
         {
             SetAnimState(up: true, down: false, walk: false);
@@ -50,7 +61,7 @@ public class PlayerMovements : MonoBehaviour
         {
             SetAnimState(up: false, down: true, walk: false);
         }
-        else if (moveX != 0)
+        else if (Mathf.Abs(currentVelocity.x) > 0.05f)
         {
             SetAnimState(up: false, down: false, walk: true);
         }
@@ -62,7 +73,19 @@ public class PlayerMovements : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = movementInput * moveSpeed;
+        Vector2 targetVelocity = movementInput * moveSpeed;
+
+        float smoothTime = movementInput.sqrMagnitude > 0f
+            ? accelerationTime
+            : decelerationTime;
+
+        currentVelocity = Vector2.SmoothDamp(
+            currentVelocity,
+            targetVelocity,
+            ref velocityRef,
+            smoothTime);
+
+        rb.linearVelocity = currentVelocity;
     }
 
     private void SetAnimState(bool up, bool down, bool walk)
