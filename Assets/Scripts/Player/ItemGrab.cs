@@ -29,7 +29,7 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private string throwTrigger = "Throw";
 
     private Rigidbody2D grabbedRb;
-    private Collider2D grabbedCollider; // Variable ajoutée pour mémoriser le Collider
+    private Collider2D grabbedCollider;
     private Vector2 currentVelocity = Vector2.zero;
     private Camera mainCamera;
     private Vector2 grabDirection = Vector2.up;

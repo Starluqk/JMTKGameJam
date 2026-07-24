@@ -4225,6 +4225,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95051152526182270, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: moveVFX
+      value: 
+      objectReference: {fileID: 4353938077110164351}
+    - target: {fileID: 95051152526182270, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: playEventName
+      value: OnRun
+      objectReference: {fileID: 0}
+    - target: {fileID: 95051152526182270, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: stopEventName
+      value: OnStatic
+      objectReference: {fileID: 0}
     - target: {fileID: 1019734564003336611, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_SortingOrder
       value: 50
@@ -4290,6 +4302,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+--- !u!2083052967 &4353938077110164351 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 7284358326548866664, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+  m_PrefabInstance: {fileID: 4353938077110164350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

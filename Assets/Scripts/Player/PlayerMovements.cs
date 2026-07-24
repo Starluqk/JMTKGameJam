@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.VFX;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovements : MonoBehaviour
 {
@@ -12,6 +12,16 @@ public class PlayerMovements : MonoBehaviour
     [Tooltip("Temps nécessaire pour s'arrêter complètement.")]
     [SerializeField] private float decelerationTime = 0.18f;
 
+    [Header("VFX Graph")]
+    [Tooltip("Le composant VisualEffect de ton VFX Graph")]
+    [SerializeField] private VisualEffect moveVFX;
+
+    [Tooltip("Nom de l'événement d'arrêt dans le VFX Graph (par défaut 'OnStop')")]
+    [SerializeField] private string stopEventName = "OnStop";
+
+    [Tooltip("Nom de l'événement de démarrage dans le VFX Graph (par défaut 'OnPlay')")]
+    [SerializeField] private string playEventName = "OnPlay";
+
     [Header("Composants")]
     public SpriteRenderer playerSprite;
 
@@ -21,6 +31,8 @@ public class PlayerMovements : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 currentVelocity;
     private Vector2 velocityRef;
+
+    private bool isVFXPlaying = false;
 
     private readonly string Up = "GoingUp";
     private readonly string Down = "GoingDown";
@@ -33,6 +45,11 @@ public class PlayerMovements : MonoBehaviour
 
         if (playerSprite == null)
             playerSprite = GetComponent<SpriteRenderer>();
+
+        if (moveVFX != null)
+        {
+            moveVFX.SendEvent(stopEventName);
+        }
     }
 
     private void Update()
@@ -42,7 +59,6 @@ public class PlayerMovements : MonoBehaviour
 
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        // Retourner le sprite
         if (moveX < 0)
         {
             playerSprite.flipX = true;
@@ -52,7 +68,6 @@ public class PlayerMovements : MonoBehaviour
             playerSprite.flipX = false;
         }
 
-        // Animations
         if (moveY > 0)
         {
             SetAnimState(up: true, down: false, walk: false);
@@ -69,6 +84,8 @@ public class PlayerMovements : MonoBehaviour
         {
             SetAnimState(up: false, down: false, walk: false);
         }
+
+        HandleVFXGraph();
     }
 
     private void FixedUpdate()
@@ -86,6 +103,24 @@ public class PlayerMovements : MonoBehaviour
             smoothTime);
 
         rb.linearVelocity = currentVelocity;
+    }
+
+    private void HandleVFXGraph()
+    {
+        if (moveVFX == null) return;
+
+        bool isMoving = currentVelocity.magnitude > 0.1f;
+
+        if (isMoving && !isVFXPlaying)
+        {
+            moveVFX.SendEvent(playEventName);
+            isVFXPlaying = true;
+        }
+        else if (!isMoving && isVFXPlaying)
+        {
+            moveVFX.SendEvent(stopEventName);
+            isVFXPlaying = false;
+        }
     }
 
     private void SetAnimState(bool up, bool down, bool walk)
