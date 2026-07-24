@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1289225968343991345}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   grabRadius: 0.65
   holdDistance: 1.5
   chickenIsGrabbed: 0
+  extinctorIsGrabbed: 0
   smoothTime: 0.01
   defaultItemDamping: 10
   throwForce: 100
