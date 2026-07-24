@@ -119,8 +119,8 @@ public class ItemGrabber : MonoBehaviour
                 if (collider.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
                 {
                     grabbedRb = rb;
-                    grabbedCollider = collider; // Mémorise le collider de l'objet
-                    grabbedCollider.isTrigger = true; // Passe en Trigger lors du grab
+                    grabbedCollider = collider;
+                    grabbedCollider.isTrigger = true;
 
                     grabbedRb.linearDamping = defaultItemDamping;
 
@@ -183,14 +183,11 @@ public class ItemGrabber : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Remet le collider en non-trigger et réinitialise les références de l'objet porté.
-    /// </summary>
     private void ResetGrabbedItemPhysics()
     {
         if (grabbedCollider != null)
         {
-            grabbedCollider.isTrigger = false; // Repasse le collider en normal
+            grabbedCollider.isTrigger = false;
             grabbedCollider = null;
         }
 
