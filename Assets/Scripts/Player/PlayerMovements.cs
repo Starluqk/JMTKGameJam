@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovements : MonoBehaviour
 {
-    [Header("D�placement")]
+    [Header("Déplacement")]
     [SerializeField] private float moveSpeed = 6f;
 
     [Header("Composants")]
@@ -33,48 +33,46 @@ public class PlayerMovements : MonoBehaviour
 
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        bool pressUp = Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
-        bool pressDown = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
-        bool pressLeft = Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
-        bool pressRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
-
-        if (pressLeft)
+        // Flip Sprite (Gauche / Droite)
+        if (moveX < 0)
         {
             playerSprite.flipX = true;
         }
-        else if (pressRight)
+        else if (moveX > 0)
         {
             playerSprite.flipX = false;
         }
 
-        if (pressUp)
+        // Gestion des états d'animation en direct
+        if (moveY > 0)
         {
-            animator.SetBool(Up, true);
-            animator.SetBool(Down, false);
-            animator.SetBool(Walk, false);
+            SetAnimState(up: true, down: false, walk: false);
         }
-        else if (pressDown)
+        else if (moveY < 0)
         {
-            animator.SetBool(Up, false);
-            animator.SetBool(Down, true);
-            animator.SetBool(Walk, false);
+            SetAnimState(up: false, down: true, walk: false);
         }
-        else if (pressLeft || pressRight)
+        else if (moveX != 0)
         {
-            animator.SetBool(Up, false);
-            animator.SetBool(Down, false);
-            animator.SetBool(Walk, true);
+            SetAnimState(up: false, down: false, walk: true);
         }
         else
         {
-            animator.SetBool(Up, false);
-            animator.SetBool(Down, false);
-            animator.SetBool(Walk, false);
+            SetAnimState(up: false, down: false, walk: false);
         }
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = movementInput * moveSpeed;
+    }
+
+    private void SetAnimState(bool up, bool down, bool walk)
+    {
+        if (animator == null) return;
+
+        animator.SetBool(Up, up);
+        animator.SetBool(Down, down);
+        animator.SetBool(Walk, walk);
     }
 }
