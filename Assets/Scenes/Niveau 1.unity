@@ -2007,15 +2007,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5960655967401759431, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 308
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 8445505194377634736, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -847
+      value: -831
       objectReference: {fileID: 0}
     - target: {fileID: 8445505194377634736, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 429
+      value: 488
       objectReference: {fileID: 0}
     - target: {fileID: 8695241606510097316, guid: fccaab77bcea4664bad827e1e965a905, type: 3}
       propertyPath: m_LocalPosition.x
