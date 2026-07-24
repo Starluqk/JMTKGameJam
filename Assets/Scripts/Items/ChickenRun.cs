@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class ChickenRun : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ChickenRun : MonoBehaviour
     private string runningBool = "isRunning";
     private Vector3 position;
     public SpriteRenderer chickenSprite;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip[] listSound;
 
     private ItemGrabber grabber;
 
@@ -102,5 +105,19 @@ public class ChickenRun : MonoBehaviour
         {
             Debug.LogWarning("ChickenRun : Aucun GameObject avec le layer 'Player' n'a été trouvé dans la scène !");
         }
+    }
+
+    private void playSound()
+    {
+        if (source.isPlaying == false)
+        {
+            int randomNumber = Random.Range(0, 4);
+            source.PlayOneShot(listSound[randomNumber]);
+        }
+    }
+
+    private void stopplaying()
+    {
+        source.Stop();
     }
 }
