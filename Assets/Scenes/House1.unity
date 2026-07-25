@@ -2739,6 +2739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58949717262747992, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.7349854
+      objectReference: {fileID: 0}
     - target: {fileID: 7270027290067161936, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
       propertyPath: m_Name
       value: LevelLoad

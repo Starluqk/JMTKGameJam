@@ -1224,6 +1224,8 @@ MonoBehaviour:
     m_Bits: 512
   - serializedVersion: 2
     m_Bits: 262144
+  - serializedVersion: 2
+    m_Bits: 131072
   scorePrefix: 'Score : '
 --- !u!114 &779077309919572449
 MonoBehaviour:
@@ -1261,7 +1263,7 @@ MonoBehaviour:
   - displayName: Chicken thrown by the window
     targetLayer:
       serializedVersion: 2
-      m_Bits: 131584
+      m_Bits: 131072
     totalCount: 0
   trackerText: {fileID: 5461065999644371013}
   updateInterval: 0.25
