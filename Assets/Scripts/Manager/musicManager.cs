@@ -7,7 +7,7 @@ public class musicManager : MonoBehaviour
     [SerializeField] private audioclass gameMusic;
     void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.GetSceneByName("House1").buildIndex)
         {
             menuMusic.playClipOnLoop("MainMenuMusic");
         }
