@@ -4,13 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DirtStain : MonoBehaviour
 {
-    [Header("Réglages du Nettoyage")]
+    [Header("Rï¿½glages du Nettoyage")]
     [Tooltip("Vitesse d'effacement de la tache")]
     [SerializeField] private float cleanSpeed = 2f;
 
     [Header("Identification de l'outil")]
     [Tooltip("Layer du balai (ex: Broom)")]
     [SerializeField] private LayerMask broomLayer;
+
+    [SerializeField] private audioclass audioclass;
 
     private List<SpriteRenderer> allRenderers = new List<SpriteRenderer>();
     private float currentOpacity = 1f;
@@ -50,6 +52,7 @@ public class DirtStain : MonoBehaviour
             if (mouseMovement > 0.05f)
             {
                 CleanStain(mouseMovement * cleanSpeed * Time.deltaTime);
+                audioclass.playClipOnLoop("balais");
             }
         }
     }
