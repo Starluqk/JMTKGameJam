@@ -253,6 +253,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1359133050095844643, guid: fccc2d055a96bb4478ea81d5bb6ea4ea, type: 3}
   m_PrefabInstance: {fileID: 5244377987045967074}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &325085467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1289225968343991345, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+  m_PrefabInstance: {fileID: 1973291268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d7a8aad1b2b9a4bb58a13ad9df78f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemGrab
 --- !u!4 &346694029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 220494515236853333, guid: 5252c62171e9d8b4ca239f9b3555e733, type: 3}
@@ -2239,6 +2250,9 @@ MonoBehaviour:
   trashLayer:
     serializedVersion: 2
     m_Bits: 64
+  audioclass:
+    soundClass: []
+    source: {fileID: 0}
 --- !u!61 &1265123980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3089,6 +3103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95051152526182270, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: itemGrabber
+      value: 
+      objectReference: {fileID: 325085467}
     - target: {fileID: 1158899498086480627, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_SortingOrder
       value: 95

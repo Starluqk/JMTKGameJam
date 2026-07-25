@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.VFX;
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovements : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerMovements : MonoBehaviour
     [Tooltip("Nom de l'événement de démarrage dans le VFX Graph (par défaut 'OnPlay')")]
     [SerializeField] private string playEventName = "OnPlay";
 
+    [Header("Item Grabber")]
+    [Tooltip("Référence vers ton script ItemGrabber pour vérifier si un objet est porté")]
+    [SerializeField] private ItemGrabber itemGrabber;
+
     [Header("Composants")]
     public SpriteRenderer playerSprite;
 
@@ -37,6 +42,7 @@ public class PlayerMovements : MonoBehaviour
     private readonly string Up = "GoingUp";
     private readonly string Down = "GoingDown";
     private readonly string Walk = "IsWalking";
+    private readonly string Carrying = "IsCarrying";
 
     private void Awake()
     {
@@ -45,6 +51,9 @@ public class PlayerMovements : MonoBehaviour
 
         if (playerSprite == null)
             playerSprite = GetComponent<SpriteRenderer>();
+
+        if (itemGrabber == null)
+            itemGrabber = GetComponent<ItemGrabber>();
 
         if (moveVFX != null)
         {
