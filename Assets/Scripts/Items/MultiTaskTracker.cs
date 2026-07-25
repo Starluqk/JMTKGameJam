@@ -24,7 +24,6 @@ public class MultiTaskTracker : MonoBehaviour
     [SerializeField] private TextMeshProUGUI trackerText;
 
     [Header("Paramètres")]
-    [Tooltip("Intervalle de vérification en secondes")]
     [SerializeField] private float updateInterval = 0.25f;
 
     private void Start()
@@ -48,10 +47,15 @@ public class MultiTaskTracker : MonoBehaviour
         for (int i = 0; i < objectives.Count; i++)
         {
             var obj = objectives[i];
+            int remaining = CountObjectsInLayer(obj.targetLayer);
+
+            if (remaining > obj.totalCount)
+            {
+                obj.totalCount = remaining;
+            }
 
             if (obj.totalCount == 0) continue;
 
-            int remaining = CountObjectsInLayer(obj.targetLayer);
             int cleared = obj.totalCount - remaining;
 
             if (cleared < 0)

@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiTaskTracker
   objectives:
-  - displayName: 'Item into the fridge '
+  - displayName: Item into the sink
     targetLayer:
       serializedVersion: 2
       m_Bits: 2048
