@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class FridgeZone : MonoBehaviour
 {
     [Header("Configuration")]
-    [Tooltip("Sélectionnez le ou les layers qui doivent être détruits par la poubelle (ex: Fridge).")]
+    [Tooltip("Sï¿½lectionnez le ou les layers qui doivent ï¿½tre dï¿½truits par la poubelle (ex: Fridge).")]
     [SerializeField] private LayerMask fridgeLayer;
+
+    [SerializeField] private audioclass audioclass;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +23,7 @@ public class FridgeZone : MonoBehaviour
                 ScoreManager.Instance.AddScore(100);
             }
 
+            audioclass.playClipOnce("destroy");
             Destroy(obj);
         }
     }

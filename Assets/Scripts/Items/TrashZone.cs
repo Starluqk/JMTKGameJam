@@ -1,9 +1,11 @@
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class TrashZone : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private LayerMask trashLayer;
+    
+    [SerializeField] private audioclass audioclass;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,7 +20,7 @@ public class TrashZone : MonoBehaviour
             {
                 ScoreManager.Instance.AddScore(100);
             }
-
+            audioclass.playClipOnce("destroy");
             Destroy(obj);
         }
     }
