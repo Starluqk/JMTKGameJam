@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
 
-    [Header("Paramètres du Jeu")]
+    [Header("Paramï¿½tres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
 
     [SerializeField] private List<LayerMask> trashLayers = new List<LayerMask>();
@@ -130,7 +130,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            // Défaite (< 90%)
+            // Dï¿½faite (< 90%)
             if (endPanel != null)
             {
                 endPanel.SetActive(true);
@@ -173,5 +173,10 @@ public class ScoreManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public float GetTimeRemaining()
+    {
+        return timeRemaining;
     }
 }

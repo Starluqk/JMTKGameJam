@@ -1011,6 +1011,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7803765052676685689, guid: 71c53f01b8c191d49a5fcc2d90d767b8, type: 3}
   m_PrefabInstance: {fileID: 4356859850023499093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1108244137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108244139}
+  - component: {fileID: 1108244138}
+  m_Layer: 0
+  m_Name: RandomEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1108244138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108244137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ffba117c415e449a73abd72605752d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomEvent
+  minTimeEvent:
+  - 45
+  - 20
+  maxTimeEvent:
+  - 50
+  - 25
+  EventSpawner:
+  - {fileID: 7687766313692969861, guid: 6890985747e22aa458054c6cdcb93d19, type: 3}
+  - {fileID: 2335795797435576323, guid: 196cf570829b8da4e8d24d089b4ac40f, type: 3}
+--- !u!4 &1108244139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108244137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.46667, y: 1.85804, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159117966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2089,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a539129ce5d847544922b192db45ce43, type: 3}
+--- !u!1001 &1258603790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.2465067
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.477829
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599857828689536310, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637094182978333769, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 1773604262}
+    - target: {fileID: 9056807346331328354, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_Name
+      value: Extinctor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
 --- !u!1 &1261610916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,7 +2887,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3465942932847066011, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 222320390}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
@@ -2977,6 +3091,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60e04f5c5c24a7547bab719cccf29ee0, type: 3}
+--- !u!4 &1773604262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6932841543733614169, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+  m_PrefabInstance: {fileID: 1973291268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874823145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3913,6 +4032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NightStand A
       objectReference: {fileID: 0}
+    - target: {fileID: 5144589165311645634, guid: fccc2d055a96bb4478ea81d5bb6ea4ea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4521,3 +4644,5 @@ SceneRoots:
   - {fileID: 395595381}
   - {fileID: 124426259}
   - {fileID: 708961059}
+  - {fileID: 1108244139}
+  - {fileID: 1258603790}

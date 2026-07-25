@@ -18,7 +18,7 @@ public class TrashZone : MonoBehaviour
             {
                 ScoreManager.Instance.AddScore(100);
             }
-
+            
             Destroy(obj);
         }
     }
