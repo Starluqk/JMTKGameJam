@@ -15,7 +15,7 @@ public class OnTriggerWall : MonoBehaviour
 
     private void Start()
     {
-        if (sr.IsUnityNull())
+        if (_wall.IsUnityNull())
         {
             _wall = gameObject;
             sr = gameObject.GetComponent<SpriteRenderer>();
@@ -43,6 +43,16 @@ public class OnTriggerWall : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            sr = _wall.GetComponent<SpriteRenderer>();
+            _wantedOpacity = _opacity;
+            other.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
