@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RandomEvent : MonoBehaviour
@@ -34,11 +35,16 @@ public class RandomEvent : MonoBehaviour
        
     }
 
-    private void GetRandomEvent()
+    public void GetRandomEvent()
     {
         if (EventSpawner.Length > 0)
         {
-            Instantiate(EventSpawner[Random.Range(0, EventSpawner.Length)]);
+            GameObject obj = Instantiate(EventSpawner[Random.Range(0, EventSpawner.Length)]);
+            if (!obj.GetComponent<ToiletEvent>().IsUnityNull())
+            {
+                obj.GetComponent<ToiletEvent>().SetRandomEvent(gameObject.GetComponent<RandomEvent>());
+            }
         }
     }
+    
 }
