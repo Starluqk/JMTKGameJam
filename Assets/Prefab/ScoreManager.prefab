@@ -1211,7 +1211,7 @@ MonoBehaviour:
   resultTextVictory: {fileID: 1288563981787209345}
   endPanel: {fileID: 8029582339571915182}
   victoryPanel: {fileID: 2365153510708744411}
-  gameDuration: 600
+  gameDuration: 60
   trashLayers:
   - serializedVersion: 2
     m_Bits: 64
