@@ -10,7 +10,8 @@ public class FireSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject feu = Instantiate(fire, spawnPoint[Random.Range(0, spawnPoint.Length)].transform.position, Quaternion.identity);
+        GameObject feu = Instantiate(fire, transform);
+        feu.transform.localPosition = spawnPoint[Random.Range(0, spawnPoint.Length)].transform.localPosition;
         Instantiate(alarm,feu.transform); 
     }
 

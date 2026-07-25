@@ -178,7 +178,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 95
   m_Sprite: {fileID: -467307283419413426, guid: b4f35f50236901544b9b8be19a98d359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   moveVFX: {fileID: 7284358326548866664}
   stopEventName: OnStatic
   playEventName: OnRun
+  itemGrabber: {fileID: 1289225968343991345}
   playerSprite: {fileID: 1158899498086480627}
 --- !u!95 &5795650965727428498
 Animator:
@@ -597,7 +598,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.88
+  orthographic size: 3.94
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
