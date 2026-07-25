@@ -534,6 +534,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742690351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7270027290067161936, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+  m_PrefabInstance: {fileID: 1606221047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &742690354
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742690351}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59318f3db7987504b88bc03fc0c9c386, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &854308302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4059777421461563851, guid: e899f984936a7854dbb5dbfa68216259, type: 3}
@@ -2573,8 +2600,62 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3971929648529986431, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7270027290067161936, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 742690354}
   m_SourcePrefab: {fileID: 100100000, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
+--- !u!1 &1653766436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1112762564736477930, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
+  m_PrefabInstance: {fileID: 7595959972315346339}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1653766437
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653766436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6d53b668b3d12445823407769606d7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1653766442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653766436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b843d879e604374e8f7093344831469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedCleanable
+  animator: {fileID: 0}
+  brokenStateName: BrokenToilet
+  idleTriggerName: Cleaned
+  cleanSpeed: 0.5
+  broomLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  itemGrabber: {fileID: 0}
+  audioclass:
+    soundClass: []
+    source: {fileID: 0}
+  Casser: IsBroken
 --- !u!4 &1701130020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6432422285588132889, guid: 3c307016dd57a394587d49769328f043, type: 3}
@@ -3965,9 +4046,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toilet
       objectReference: {fileID: 0}
+    - target: {fileID: 1112762564736477930, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1514233056122360287, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.44456
+      value: -13.833
       objectReference: {fileID: 0}
     - target: {fileID: 1514233056122360287, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4012,7 +4097,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1112762564736477930, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1653766437}
+    - targetCorrespondingSourceObject: {fileID: 1112762564736477930, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1653766442}
   m_SourcePrefab: {fileID: 100100000, guid: 65b19efd0ff8e8f41b19a1cf3f3e7d85, type: 3}
 --- !u!1001 &7779167146807964377
 PrefabInstance:

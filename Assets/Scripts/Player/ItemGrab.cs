@@ -11,7 +11,7 @@ public class ItemGrabber : MonoBehaviour
     [Header("Bools d'objets saisis")]
     public bool chickenIsGrabbed = false;
     public bool extinctorIsGrabbed = false;
-    public bool broomIsGrabbed = false; // Booléen ajouté pour le balai
+    public bool broomIsGrabbed = false;
 
     [Header("Physique d'Attraction & Lancer")]
     [Range(0.01f, 1f)]
