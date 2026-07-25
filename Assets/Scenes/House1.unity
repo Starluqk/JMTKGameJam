@@ -309,6 +309,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navigation
       objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[0].maxSpawnCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[0].minSpawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[1].maxSpawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[1].minSpawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[2].maxSpawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[3].maxSpawnCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[3].minSpawnCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7997549562588026365, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.626
