@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Prefire : MonoBehaviour
@@ -7,6 +8,8 @@ public class Prefire : MonoBehaviour
     private float timer;
 
     private bool isCreated;
+
+    private GameObject obj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,11 +21,17 @@ public class Prefire : MonoBehaviour
     {
         if (!isCreated && timer < 0)
         {
-            Instantiate(fire, transform);
+            obj = Instantiate(fire, transform);
             isCreated = true;
         }
 
         timer -= Time.deltaTime;
-
+        if (isCreated)
+        {
+            if (obj.IsUnityNull())
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
