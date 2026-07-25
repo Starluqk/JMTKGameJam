@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7801116304433604079}
   - component: {fileID: 4052835706134105359}
   m_Layer: 11
-  m_Name: Item
+  m_Name: Item 1
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.12, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1.4082723}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 938822039686969943}
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3840669754812678891, guid: 1558a48632f1d1c4ab0f60a22f520ec2, type: 3}
+  m_Sprite: {fileID: -4703349947525902936, guid: 22db41cd2f4899b4280ef8eed948fd87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
