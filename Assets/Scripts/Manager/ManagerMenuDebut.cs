@@ -8,6 +8,7 @@ public class ManagerMenuDebut : MonoBehaviour
     public Animator textFade;
     public void OnStart()
     {
+        Time.timeScale = 1.0f;
         LoadNextScene();
     }
 
