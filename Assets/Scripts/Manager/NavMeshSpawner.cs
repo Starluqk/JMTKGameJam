@@ -4,29 +4,32 @@ using UnityEngine.AI;
 
 public class NavMeshSpawner : MonoBehaviour
 {
-    [Header("Préfabs")]
-    [SerializeField] private GameObject[] prefabsToSpawn;
+    [System.Serializable]
+    public class SpawnGroup
+    {
+        public string groupName = "Nouveau Groupe";
 
-    [Header("Nombre de Spawn (Aléatoire)")]
-    [SerializeField] private int minSpawnCount = 10;
-    [SerializeField] private int maxSpawnCount = 20
-        ;
+        public GameObject[] prefabsToSpawn;
+
+        [Header("Quantité")]
+        [Min(0)] public int minSpawnCount = 1;
+        [Min(0)] public int maxSpawnCount = 5;
+    }
+
+    [Header("Groupes de Spawns")]
+    [SerializeField] private List<SpawnGroup> spawnGroups = new List<SpawnGroup>();
 
     [Header("Paramètres de Zone")]
-    [SerializeField] private Transform spawnCenter;
-    [SerializeField] private float spawnRadius = 20f;
-    [SerializeField] private float maxNavMeshDistance = 2f;
     [SerializeField] private int navMeshAreaMask = NavMesh.AllAreas;
     [SerializeField] private Transform parentContainer;
 
     [Header("Automatique")]
     [SerializeField] private bool spawnOnStart = true;
 
+    private NavMeshTriangulation navMeshTriangulation;
+
     private void Start()
     {
-        if (spawnCenter == null)
-            spawnCenter = transform;
-
         if (spawnOnStart)
         {
             SpawnAll();
@@ -35,56 +38,75 @@ public class NavMeshSpawner : MonoBehaviour
 
     public void SpawnAll()
     {
-        if (prefabsToSpawn == null || prefabsToSpawn.Length == 0)
+        if (spawnGroups == null || spawnGroups.Count == 0)
         {
-            Debug.LogWarning("[NavMeshSpawner] Aucun préfab assigné dans le tableau !");
+            Debug.LogWarning("[NavMeshSpawner] Aucun groupe de spawn configuré !");
             return;
         }
 
-        int targetSpawnCount = Random.Range(minSpawnCount, maxSpawnCount + 1);
+        navMeshTriangulation = NavMesh.CalculateTriangulation();
+
+        if (navMeshTriangulation.vertices.Length == 0)
+        {
+            Debug.LogError("[NavMeshSpawner] Aucun NavMesh trouvé dans la scène ! Avez-vous 'Bake' votre NavMesh ?");
+            return;
+        }
+
+        foreach (var group in spawnGroups)
+        {
+            SpawnGroupObjects(group);
+        }
+    }
+
+    private void SpawnGroupObjects(SpawnGroup group)
+    {
+        if (group.prefabsToSpawn == null || group.prefabsToSpawn.Length == 0)
+        {
+            Debug.LogWarning($"[NavMeshSpawner] Aucun préfab assigné dans le groupe '{group.groupName}' !");
+            return;
+        }
+
+        int targetSpawnCount = Random.Range(group.minSpawnCount, group.maxSpawnCount + 1);
+
+        if (targetSpawnCount <= 0) return;
 
         int successCount = 0;
-        int maxAttempts = targetSpawnCount * 5;
-        int attempts = 0;
 
-        while (successCount < targetSpawnCount && attempts < maxAttempts)
+        for (int i = 0; i < targetSpawnCount; i++)
         {
-            attempts++;
-
-            if (TryGetRandomNavMeshPoint(out Vector3 spawnPoint))
+            if (TryGetPointOnEntireNavMesh(out Vector3 spawnPoint))
             {
-                GameObject randomPrefab = prefabsToSpawn[Random.Range(0, prefabsToSpawn.Length)];
+                int randomIndex = Random.Range(0, group.prefabsToSpawn.Length);
+                GameObject prefabToInstantiate = group.prefabsToSpawn[randomIndex];
 
-                Instantiate(randomPrefab, spawnPoint, Quaternion.identity, parentContainer);
+                Instantiate(prefabToInstantiate, spawnPoint, Quaternion.identity, parentContainer);
                 successCount++;
             }
         }
 
-        if (successCount < targetSpawnCount)
-        {
-            Debug.LogWarning($"[NavMeshSpawner] Seulement {successCount}/{targetSpawnCount} objets ont pu être placés sur le NavMesh.");
-        }
+        Debug.Log($"[NavMeshSpawner] Groupe '{group.groupName}' : Cible = {targetSpawnCount} | Spawns réussis = {successCount}");
     }
 
-    private bool TryGetRandomNavMeshPoint(out Vector3 result)
+    private bool TryGetPointOnEntireNavMesh(out Vector3 result)
     {
-        Vector3 randomDirection = Random.insideUnitSphere * spawnRadius;
-        randomDirection += spawnCenter.position;
+        int totalTriangles = navMeshTriangulation.indices.Length / 3;
 
-        if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, maxNavMeshDistance, navMeshAreaMask))
+        if (totalTriangles == 0)
         {
-            result = hit.position;
-            return true;
+            result = Vector3.zero;
+            return false;
         }
 
-        result = Vector3.zero;
-        return false;
-    }
+        int randomTriangleIndex = Random.Range(0, totalTriangles) * 3;
 
-    private void OnDrawGizmosSelected()
-    {
-        Transform center = spawnCenter != null ? spawnCenter : transform;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(center.position, spawnRadius);
+        Vector3 vertexA = navMeshTriangulation.vertices[navMeshTriangulation.indices[randomTriangleIndex]];
+        Vector3 vertexB = navMeshTriangulation.vertices[navMeshTriangulation.indices[randomTriangleIndex + 1]];
+        Vector3 vertexC = navMeshTriangulation.vertices[navMeshTriangulation.indices[randomTriangleIndex + 2]];
+
+        float r1 = Mathf.Sqrt(Random.value);
+        float r2 = Random.value;
+
+        result = (1 - r1) * vertexA + (r1 * (1 - r2)) * vertexB + (r1 * r2) * vertexC;
+        return true;
     }
 }

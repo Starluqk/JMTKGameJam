@@ -276,6 +276,7 @@ MonoBehaviour:
   holdDistance: 1
   chickenIsGrabbed: 0
   extinctorIsGrabbed: 0
+  broomIsGrabbed: 0
   smoothTime: 0.01
   defaultItemDamping: 10
   throwForce: 100

@@ -93,27 +93,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be527eb74a6d07949a9626e342055ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavMeshSpawner
-  prefabsToSpawn:
-  - {fileID: 1634989039602593741, guid: e6f74e8a9a1a5d248838c1a837636d1c, type: 3}
-  - {fileID: 1634989039602593741, guid: 12116f84d195f7d40aa8d0111c4839c6, type: 3}
-  - {fileID: 1634989039602593741, guid: b3696c9d1bd06d245b53f66370a399ee, type: 3}
-  - {fileID: 1634989039602593741, guid: 7f0bca05909345a4cafd89e59e98f51d, type: 3}
-  - {fileID: 1634989039602593741, guid: e11139277852f5d45af07925fb79c84c, type: 3}
-  - {fileID: 1634989039602593741, guid: 60d6351b2e545a94495139875a494ee2, type: 3}
-  - {fileID: 1634989039602593741, guid: d0cc52812de577f4f928b8c1dce58503, type: 3}
-  - {fileID: 1634989039602593741, guid: def2a3571f0639c4bab67ab28ed692f6, type: 3}
-  - {fileID: 1634989039602593741, guid: 127bd3bcbb843b8419c0bb06cfefe8c3, type: 3}
-  - {fileID: 1634989039602593741, guid: 32fdef010cc951e4489e722a2c1b9c1d, type: 3}
-  - {fileID: 1634989039602593741, guid: 8bd326c00bdf448459f3ba5f0aba96d7, type: 3}
-  - {fileID: 143312872328887880, guid: 74f482d1684540945bef97fe2583ef49, type: 3}
-  - {fileID: 143312872328887880, guid: 1c1de7337cb2e8d48acba52abe58b7ab, type: 3}
-  - {fileID: 143312872328887880, guid: e93b6c4c41f3bbf4aaa76895e9008002, type: 3}
-  - {fileID: 143312872328887880, guid: 579f66b1fd280e541af6719b9eac47d7, type: 3}
-  minSpawnCount: 20
-  maxSpawnCount: 30
-  spawnCenter: {fileID: 7997549562588026365}
-  spawnRadius: 14.6
-  maxNavMeshDistance: 2
+  spawnGroups:
+  - groupName: Trash
+    prefabsToSpawn:
+    - {fileID: 1634989039602593741, guid: e6f74e8a9a1a5d248838c1a837636d1c, type: 3}
+    - {fileID: 1634989039602593741, guid: 12116f84d195f7d40aa8d0111c4839c6, type: 3}
+    - {fileID: 1634989039602593741, guid: b3696c9d1bd06d245b53f66370a399ee, type: 3}
+    - {fileID: 1634989039602593741, guid: 7f0bca05909345a4cafd89e59e98f51d, type: 3}
+    - {fileID: 1634989039602593741, guid: e11139277852f5d45af07925fb79c84c, type: 3}
+    - {fileID: 1634989039602593741, guid: 60d6351b2e545a94495139875a494ee2, type: 3}
+    - {fileID: 1634989039602593741, guid: d0cc52812de577f4f928b8c1dce58503, type: 3}
+    - {fileID: 1634989039602593741, guid: def2a3571f0639c4bab67ab28ed692f6, type: 3}
+    - {fileID: 1634989039602593741, guid: 127bd3bcbb843b8419c0bb06cfefe8c3, type: 3}
+    - {fileID: 1634989039602593741, guid: 32fdef010cc951e4489e722a2c1b9c1d, type: 3}
+    - {fileID: 1634989039602593741, guid: 8bd326c00bdf448459f3ba5f0aba96d7, type: 3}
+    minSpawnCount: 7
+    maxSpawnCount: 15
+  - groupName: SinkItem
+    prefabsToSpawn:
+    - {fileID: 143312872328887880, guid: 74f482d1684540945bef97fe2583ef49, type: 3}
+    - {fileID: 143312872328887880, guid: 1c1de7337cb2e8d48acba52abe58b7ab, type: 3}
+    - {fileID: 143312872328887880, guid: e93b6c4c41f3bbf4aaa76895e9008002, type: 3}
+    - {fileID: 143312872328887880, guid: 579f66b1fd280e541af6719b9eac47d7, type: 3}
+    minSpawnCount: 2
+    maxSpawnCount: 6
+  - groupName: Vomit/Mud
+    prefabsToSpawn:
+    - {fileID: 4551979896100530570, guid: 83993ee1eeab780499e1792e7b5638b5, type: 3}
+    - {fileID: 4551979896100530570, guid: 663bf7958cc931c48858dd5d507e20bb, type: 3}
+    - {fileID: 4551979896100530570, guid: 76d327ae475047b4785415b3065d1fc9, type: 3}
+    - {fileID: 4551979896100530570, guid: 7a6d877c9bc8b7e498a51fd9c95ff7c7, type: 3}
+    minSpawnCount: 1
+    maxSpawnCount: 4
+  - groupName: Chicken
+    prefabsToSpawn:
+    - {fileID: 4957758102620521798, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
+    minSpawnCount: 1
+    maxSpawnCount: 1
   navMeshAreaMask: -1
   parentContainer: {fileID: 7997549562588026365}
   spawnOnStart: 1

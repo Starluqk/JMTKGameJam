@@ -4,13 +4,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DirtStain : MonoBehaviour
 {
-    [Header("R�glages du Nettoyage")]
+    [Header("Réglages du Nettoyage")]
     [Tooltip("Vitesse d'effacement de la tache")]
     [SerializeField] private float cleanSpeed = 2f;
 
     [Header("Identification de l'outil")]
     [Tooltip("Layer du balai (ex: Broom)")]
     [SerializeField] private LayerMask broomLayer;
+
+    [Tooltip("Référence au script qui gère la préhension des objets")]
+    [SerializeField] private ItemGrabber itemGrabber;
 
     [SerializeField] private audioclass audioclass;
 
@@ -19,6 +22,11 @@ public class DirtStain : MonoBehaviour
 
     private void Awake()
     {
+        if (itemGrabber == null)
+        {
+            itemGrabber = FindFirstObjectByType<ItemGrabber>();
+        }
+
         foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
         {
             if (!allRenderers.Contains(sr))
@@ -47,14 +55,27 @@ public class DirtStain : MonoBehaviour
     {
         if ((broomLayer.value & (1 << other.gameObject.layer)) != 0)
         {
-            float mouseMovement = Mathf.Abs(Input.GetAxis("Mouse X")) + Mathf.Abs(Input.GetAxis("Mouse Y"));
-
-            if (mouseMovement > 0.05f)
+            if (IsBroomGrabbed(other.gameObject))
             {
-                CleanStain(mouseMovement * cleanSpeed * Time.deltaTime);
-                audioclass.playClipOnLoop("balais");
+                float mouseMovement = Mathf.Abs(Input.GetAxis("Mouse X")) + Mathf.Abs(Input.GetAxis("Mouse Y"));
+
+                if (mouseMovement > 0.05f)
+                {
+                    CleanStain(mouseMovement * cleanSpeed * Time.deltaTime);
+
+                    if (audioclass != null)
+                    {
+                        audioclass.playClipOnLoop("balais");
+                    }
+                }
             }
         }
+    }
+
+    private bool IsBroomGrabbed(GameObject broomObject)
+    {
+        if (itemGrabber == null) return false;
+        return itemGrabber.GrabbedGameObject == broomObject;
     }
 
     private void CleanStain(float amount)

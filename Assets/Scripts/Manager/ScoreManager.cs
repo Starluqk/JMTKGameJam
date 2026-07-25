@@ -14,16 +14,17 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
 
-    [Header("Param�tres du Jeu")]
+    [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
 
+    [Tooltip("La liste de tous les Layers d'objets à prendre en compte dans le nettoyage")]
     [SerializeField] private List<LayerMask> trashLayers = new List<LayerMask>();
 
     [SerializeField] private string scorePrefix = "Score : ";
 
     private int currentScore = 0;
     private float timeRemaining;
-    private int initialTrashCount = 0;
+    private int maxTrashCountTracked = 0;
     private bool isGameOver = false;
 
     private void Awake()
@@ -41,7 +42,8 @@ public class ScoreManager : MonoBehaviour
         Time.timeScale = 1f;
 
         timeRemaining = gameDuration;
-        initialTrashCount = CountTrashObjects();
+
+        maxTrashCountTracked = CountTrashObjects();
 
         if (endPanel != null)
             endPanel.SetActive(false);
@@ -56,6 +58,12 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         if (isGameOver) return;
+
+        int currentTrashCount = CountTrashObjects();
+        if (currentTrashCount > maxTrashCountTracked)
+        {
+            maxTrashCountTracked = currentTrashCount;
+        }
 
         timeRemaining -= Time.deltaTime;
 
@@ -99,16 +107,21 @@ public class ScoreManager : MonoBehaviour
     private void EndGame()
     {
         isGameOver = true;
-
         Time.timeScale = 0f;
 
         int remainingTrash = CountTrashObjects();
-        int cleanedTrash = initialTrashCount - remainingTrash;
+
+        if (remainingTrash > maxTrashCountTracked)
+        {
+            maxTrashCountTracked = remainingTrash;
+        }
+
+        int cleanedTrash = maxTrashCountTracked - remainingTrash;
 
         int percentageCleaned = 0;
-        if (initialTrashCount > 0)
+        if (maxTrashCountTracked > 0)
         {
-            percentageCleaned = Mathf.RoundToInt(((float)cleanedTrash / initialTrashCount) * 100f);
+            percentageCleaned = Mathf.RoundToInt(((float)cleanedTrash / maxTrashCountTracked) * 100f);
             percentageCleaned = Mathf.Clamp(percentageCleaned, 0, 100);
         }
         else
@@ -116,9 +129,10 @@ public class ScoreManager : MonoBehaviour
             percentageCleaned = 100;
         }
 
-        if (percentageCleaned >= 90)
+        bool isVictory = percentageCleaned >= 90;
+
+        if (isVictory)
         {
-            // Victoire (90%)
             if (victoryPanel != null)
             {
                 victoryPanel.SetActive(true);
@@ -130,27 +144,29 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            // D�faite (< 90%)
             if (endPanel != null)
             {
                 endPanel.SetActive(true);
             }
         }
 
+        string resultMessage = $"TIME OUT !\n\nScore : {currentScore}\nCleared trash : {percentageCleaned}%";
+
         if (resultText != null)
         {
-            resultText.text = $"TIME OUT !\n\nScore : {currentScore}\nCleared trash : {percentageCleaned}%";
-            resultTextVictory.text = $"TIME OUT !\n\nScore : {currentScore}\nCleared trash : {percentageCleaned}%";
+            resultText.text = resultMessage;
+        }
+
+        if (resultTextVictory != null)
+        {
+            resultTextVictory.text = resultMessage;
         }
     }
 
     private int CountTrashObjects()
     {
         int count = 0;
-
-#pragma warning disable 0618
-        GameObject[] allObjects = FindObjectsOfType<GameObject>();
-#pragma warning restore 0618
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 
         foreach (GameObject obj in allObjects)
         {

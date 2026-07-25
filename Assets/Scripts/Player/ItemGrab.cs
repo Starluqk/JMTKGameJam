@@ -7,8 +7,11 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float grabRadius = 1.5f;
     [SerializeField] private float holdDistance = 1.5f;
+
+    [Header("Bools d'objets saisis")]
     public bool chickenIsGrabbed = false;
     public bool extinctorIsGrabbed = false;
+    public bool broomIsGrabbed = false; // Booléen ajouté pour le balai
 
     [Header("Physique d'Attraction & Lancer")]
     [Range(0.01f, 1f)]
@@ -30,7 +33,7 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private string throwTrigger = "Throw";
 
     [SerializeField] private audioclass audioclass;
-    
+
     private Rigidbody2D grabbedRb;
     private Collider2D grabbedCollider;
     private Vector2 currentVelocity = Vector2.zero;
@@ -39,6 +42,7 @@ public class ItemGrabber : MonoBehaviour
 
     private SpriteRenderer leftArmSprite;
     private SpriteRenderer rightArmSprite;
+    public GameObject GrabbedGameObject => grabbedRb != null ? grabbedRb.gameObject : null;
 
     private void Awake()
     {
@@ -121,7 +125,9 @@ public class ItemGrabber : MonoBehaviour
             {
                 if (collider.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
                 {
-                    audioclass.playClipOnce("grab");
+                    if (audioclass != null)
+                        audioclass.playClipOnce("grab");
+
                     grabbedRb = rb;
                     grabbedCollider = collider;
                     grabbedCollider.isTrigger = true;
@@ -130,6 +136,7 @@ public class ItemGrabber : MonoBehaviour
 
                     chickenIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Chicken"));
                     extinctorIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Extinctor"));
+                    broomIsGrabbed = (collider.gameObject.layer == LayerMask.NameToLayer("Broom"));
 
                     if (animator != null)
                     {
@@ -148,7 +155,10 @@ public class ItemGrabber : MonoBehaviour
         if (grabbedRb != null)
         {
             ResetGrabbedItemPhysics();
-            audioclass.playClipOnce("drop");
+
+            if (audioclass != null)
+                audioclass.playClipOnce("drop");
+
             if (animator != null)
             {
                 animator.SetBool(isCarryingBool, false);
@@ -203,6 +213,7 @@ public class ItemGrabber : MonoBehaviour
 
         chickenIsGrabbed = false;
         extinctorIsGrabbed = false;
+        broomIsGrabbed = false;
     }
 
     #region Gestion Visuelle des Bras
