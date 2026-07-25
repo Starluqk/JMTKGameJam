@@ -6,6 +6,8 @@ public class TriggerObject : MonoBehaviour
     [SerializeField] private GameObject _boxCollider;
 
     private BoxCollider2D _selfBoxCollider;
+
+    [SerializeField] private bool _itemHasToGetHigher = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +17,7 @@ public class TriggerObject : MonoBehaviour
         }
         
         _boxCollider = Instantiate(_boxCollider, transform);
-        _boxCollider.GetComponent<OnTriggerObject>().SetObj(gameObject);
+        _boxCollider.GetComponent<OnTriggerObject>().SetObj(gameObject, _itemHasToGetHigher);
         BoxCollider2D triggerZone = _boxCollider.GetComponent<BoxCollider2D>();
         SpriteRenderer objectSprite = GetComponent<SpriteRenderer>();
         Debug.Log(_selfBoxCollider.IsUnityNull());

@@ -5,7 +5,10 @@ public class OnTriggerObject : MonoBehaviour
 
     private GameObject _obj;
     private SpriteRenderer sr;
-    private int layer;
+    private int layer = 95;
+    private int objectLayer;
+
+    private bool _hasToGetHigher;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,9 +26,18 @@ public class OnTriggerObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             sr = _obj.GetComponent<SpriteRenderer>();
-            Debug.Log(sr.rendererPriority);
-            layer = sr.sortingOrder;
-            sr.sortingOrder = 99;
+            if (_hasToGetHigher)
+            {
+                objectLayer = sr.sortingOrder;
+                sr.sortingOrder = 90;
+                other.GetComponent<SpriteRenderer>().sortingOrder = 89;
+            }
+            else
+            {
+                other.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            }
+            
+            
         }
     }
     
@@ -33,12 +45,17 @@ public class OnTriggerObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            sr.sortingOrder = layer;
+            other.GetComponent<SpriteRenderer>().sortingOrder = layer;
+            if (_hasToGetHigher)
+            {
+                sr.sortingOrder = objectLayer;
+            }
         }
     }
     
-    public void SetObj(GameObject obj)
+    public void SetObj(GameObject obj, bool hasToGetHigher)
     {
         _obj = obj;
+        _hasToGetHigher = hasToGetHigher;
     }
 }
