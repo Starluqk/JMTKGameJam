@@ -778,6 +778,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f09b2dc08b60242986fa45baca9f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerMenuDebut
+--- !u!1001 &765390507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.63494
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.03342
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 831338645209814969, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862748061554940785, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
+      propertyPath: m_Name
+      value: musicManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a43eec5d606d7440b83f9abcf44fb54, type: 3}
 --- !u!1 &1487182810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,3 +1379,4 @@ SceneRoots:
   - {fileID: 1752256435}
   - {fileID: 160404082}
   - {fileID: 8068579034379422183}
+  - {fileID: 765390507}
