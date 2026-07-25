@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultTextVictory;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private Animator animator;
 
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
@@ -23,6 +24,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private string scorePrefix = "Score : ";
 
     private int currentScore = 0;
+    private string shake = "IsGood";
+    
+    private float gameDurationStay = 0;
     private float timeRemaining;
     private int maxTrashCountTracked = 0;
     private bool isGameOver = false;
@@ -66,6 +70,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         timeRemaining -= Time.deltaTime;
+        gameDurationStay += Time.deltaTime;
 
         if (timeRemaining <= 0f)
         {
@@ -76,6 +81,30 @@ public class ScoreManager : MonoBehaviour
         else
         {
             UpdateTimerUI();
+        }
+
+        
+
+        if (timeRemaining <= 30 && timeRemaining >= 10)
+        {
+            animator.SetBool(shake,true);
+        }
+
+        if (timeRemaining <= 10)
+        {
+            animator.SetBool(shake, false);
+            if (gameDurationStay >= 1f && gameDurationStay < 2f)
+            {
+                timerText.transform.localScale = new Vector3(2f, 2f, 2f);
+                timerText.color = Color.white;
+            }
+
+            if (gameDurationStay >= 2f)
+            {
+                gameDurationStay = 0f;
+                timerText.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
+                timerText.color = Color.red;
+            }
         }
     }
 
