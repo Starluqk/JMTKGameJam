@@ -11,8 +11,16 @@ public class OnTriggerWall : MonoBehaviour
     private float _wantedOpacity;
 
     private SpriteRenderer sr;
-    private int layer;
+    private int layer = 95;
 
+    private void Start()
+    {
+        if (sr.IsUnityNull())
+        {
+            _wall = gameObject;
+            sr = gameObject.GetComponent<SpriteRenderer>();
+        }
+    }
 
     private void Update()
     {
@@ -34,14 +42,13 @@ public class OnTriggerWall : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             sr = _wall.GetComponent<SpriteRenderer>();
-            layer = sr.sortingOrder;
             _wantedOpacity = _opacity;
-            sr.sortingOrder = 99;
+            other.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
     }
 
@@ -50,7 +57,7 @@ public class OnTriggerWall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _wantedOpacity = 1f;
-            sr.sortingOrder = layer;
+            other.GetComponent<SpriteRenderer>().sortingOrder = 95;
         }
     }
 
