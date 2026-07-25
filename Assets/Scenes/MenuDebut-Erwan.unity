@@ -1227,7 +1227,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 479559355}
         m_TargetAssemblyTypeName: ManagerMenuDebut, Assembly-CSharp
-        m_MethodName: OnStart
+        m_MethodName: tuto
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

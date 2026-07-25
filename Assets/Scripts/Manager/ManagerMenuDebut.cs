@@ -24,7 +24,7 @@ public class ManagerMenuDebut : MonoBehaviour
 
     public void tuto()
     {
-        SceneManager.LoadScene("tutorial", LoadSceneMode.Additive);
+        SceneManager.LoadScene("tuto", LoadSceneMode.Additive);
     }
 
     IEnumerator LoadLevel(int levelIndex)
