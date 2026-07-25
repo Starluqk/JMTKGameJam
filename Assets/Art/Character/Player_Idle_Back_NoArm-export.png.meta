@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 7ccbe1dbb6d305a438463405c9bc5368
+guid: 1d853aa0d2559804a871ad7190cd2580
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7446126922418941065
-    second: walk_cycle_Back_hands-Sheet_0
+      213: 5767822324144550600
+    second: Player_Idle_Back_NoArm-export_0
   - first:
-      213: -7150619642577968838
-    second: walk_cycle_Back_hands-Sheet_1
+      213: 6477786427368125289
+    second: Player_Idle_Back_NoArm-export_1
   - first:
-      213: -3939600589198807937
-    second: walk_cycle_Back_hands-Sheet_2
+      213: 7276396530059719241
+    second: Player_Idle_Back_NoArm-export_2
   - first:
-      213: 5659703427545074611
-    second: walk_cycle_Back_hands-Sheet_3
-  - first:
-      213: 3509797751910540583
-    second: walk_cycle_Back_hands-Sheet_4
-  - first:
-      213: -8452357478099252756
-    second: walk_cycle_Back_hands-Sheet_5
+      213: 546845388156554847
+    second: Player_Idle_Back_NoArm-export_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,34 +109,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_0
+      name: Player_Idle_Back_NoArm-export_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 10
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98ce0431cf4f55760800000000000000
-      internalID: 7446126922418941065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 2
-        width: 8
+        x: 2
+        y: 1
+        width: 12
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a31a5381255e3cc90800000000000000
-      internalID: -7150619642577968838
+      spriteID: 8c2343638db6b0050800000000000000
+      internalID: 5767822324144550600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_2
+      name: Player_Idle_Back_NoArm-export_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 3
-        width: 8
-        height: 28
+        x: 18
+        y: 1
+        width: 12
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7ca2e3132ab359c0800000000000000
-      internalID: -3939600589198807937
+      spriteID: 963bf165f68b5e950800000000000000
+      internalID: 6477786427368125289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_3
+      name: Player_Idle_Back_NoArm-export_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 2
-        width: 8
-        height: 27
+        x: 34
+        y: 1
+        width: 12
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bb82ece74e4b8e40800000000000000
-      internalID: 5659703427545074611
+      spriteID: 94238139714faf460800000000000000
+      internalID: 7276396530059719241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_4
+      name: Player_Idle_Back_NoArm-export_3
       rect:
         serializedVersion: 2
-        x: 68
-        y: 2
-        width: 8
-        height: 28
+        x: 50
+        y: 1
+        width: 12
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 725a71ca57e45b030800000000000000
-      internalID: 3509797751910540583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_cycle_Back_hands-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 3
-        width: 10
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce9074bf7a133ba80800000000000000
-      internalID: -8452357478099252756
+      spriteID: f5ec124bbf8c69700800000000000000
+      internalID: 546845388156554847
       vertices: []
       indices: 
       edges: []
@@ -260,12 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walk_cycle_Back_hands-Sheet_0: 7446126922418941065
-      walk_cycle_Back_hands-Sheet_1: -7150619642577968838
-      walk_cycle_Back_hands-Sheet_2: -3939600589198807937
-      walk_cycle_Back_hands-Sheet_3: 5659703427545074611
-      walk_cycle_Back_hands-Sheet_4: 3509797751910540583
-      walk_cycle_Back_hands-Sheet_5: -8452357478099252756
+      Player_Idle_Back_NoArm-export_0: 5767822324144550600
+      Player_Idle_Back_NoArm-export_1: 6477786427368125289
+      Player_Idle_Back_NoArm-export_2: 7276396530059719241
+      Player_Idle_Back_NoArm-export_3: 546845388156554847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
