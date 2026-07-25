@@ -20,7 +20,11 @@ public class TrashZone : MonoBehaviour
             {
                 ScoreManager.Instance.AddScore(100);
             }
+<<<<<<< HEAD
+            
+=======
             audioclass.playClipOnce("destroy");
+>>>>>>> a700f8568f7e326325d3d1d0ffeba30169dbe2ef
             Destroy(obj);
         }
     }
