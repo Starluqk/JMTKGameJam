@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Toilet_cass\xE9"
+  m_Name: Flood
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,19 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7455877894901610905, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 7093044541418292039, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.083333336
-      value: {fileID: -2569477403241208339, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 742876419751244261, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.16666667
-      value: {fileID: 6859886220288094048, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 2378203926326011461, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.25
-      value: {fileID: 5095114246775624527, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 707406871121198096, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.33333334
-      value: {fileID: -8523479794854300176, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 6541506434041800739, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.41666666
-      value: {fileID: -6118288356601808340, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 7802514297802789759, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     - time: 0.5
-      value: {fileID: 9200399088607768719, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+      value: {fileID: 408342261261038805, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -56,13 +56,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 7455877894901610905, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: -2569477403241208339, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: 6859886220288094048, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: 5095114246775624527, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: -8523479794854300176, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: -6118288356601808340, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
-    - {fileID: 9200399088607768719, guid: b03be4b007b80d149ba3b94fee29dbd6, type: 3}
+    - {fileID: 7093044541418292039, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 742876419751244261, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 2378203926326011461, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 707406871121198096, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 6541506434041800739, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 7802514297802789759, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
+    - {fileID: 408342261261038805, guid: 96c503903df30ed4097101eae594a7d5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

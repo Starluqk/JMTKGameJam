@@ -32,12 +32,6 @@ public class ToiletCleaner : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
-
-        if (animator != null)
-        {
-            animator.speed = 0f;
-            animator.Play(brokenStateName, 0, currentProgress);
-        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
