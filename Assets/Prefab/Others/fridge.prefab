@@ -248,7 +248,7 @@ MonoBehaviour:
   audioclass:
     soundClass:
     - _clipName: destroy
-      _clip: {fileID: 8300000, guid: e4684fb5f99cd3840b3fde308fa181f6, type: 3}
+      _clip: {fileID: 8300000, guid: 86ac4b56e5bd6484b82781099f8b3014, type: 3}
     source: {fileID: 2958561874137966307}
 --- !u!82 &2958561874137966307
 AudioSource:
