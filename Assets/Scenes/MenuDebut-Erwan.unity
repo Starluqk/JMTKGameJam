@@ -413,8 +413,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
-  m_sharedMaterial: {fileID: 4506299144336458111, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -549,8 +549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mom is comming
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
-  m_sharedMaterial: {fileID: 4506299144336458111, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -685,8 +685,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
-  m_sharedMaterial: {fileID: 4506299144336458111, guid: 445803e916b26a84a8d5bc4616a29628, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1362,7 +1362,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3971929648529986431, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3465942932847066011, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
       insertIndex: 0
