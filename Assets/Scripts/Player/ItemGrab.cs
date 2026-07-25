@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ItemGrabber : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class ItemGrabber : MonoBehaviour
     [SerializeField] private string releaseTrigger = "Release";
     [SerializeField] private string throwTrigger = "Throw";
 
+    [SerializeField] private audioclass audioclass;
+    
     private Rigidbody2D grabbedRb;
     private Collider2D grabbedCollider;
     private Vector2 currentVelocity = Vector2.zero;
@@ -118,6 +121,7 @@ public class ItemGrabber : MonoBehaviour
             {
                 if (collider.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
                 {
+                    audioclass.playClipOnce("grab");
                     grabbedRb = rb;
                     grabbedCollider = collider;
                     grabbedCollider.isTrigger = true;
@@ -144,7 +148,7 @@ public class ItemGrabber : MonoBehaviour
         if (grabbedRb != null)
         {
             ResetGrabbedItemPhysics();
-
+            audioclass.playClipOnce("drop");
             if (animator != null)
             {
                 animator.SetBool(isCarryingBool, false);
