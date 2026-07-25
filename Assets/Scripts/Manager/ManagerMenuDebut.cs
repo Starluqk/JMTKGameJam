@@ -26,6 +26,10 @@ public class ManagerMenuDebut : MonoBehaviour
     {
         SceneManager.LoadScene("tuto");
     }
+    public void credit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
 
     IEnumerator LoadLevel(int levelIndex)
     {
