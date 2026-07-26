@@ -29,6 +29,8 @@ public class PlayerMovements : MonoBehaviour
 
     [Header("Composants")]
     public SpriteRenderer playerSprite;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip[] listSound;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -72,19 +74,23 @@ public class PlayerMovements : MonoBehaviour
 
         if (moveX < 0)
         {
+            playSound();
             playerSprite.flipX = true;
         }
         else if (moveX > 0)
         {
+            playSound();
             playerSprite.flipX = false;
         }
 
         if (moveY > 0)
         {
+            playSound();
             SetAnimState(up: true, down: false, walk: false);
         }
         else if (moveY < 0)
         {
+            playSound();
             SetAnimState(up: false, down: true, walk: false);
         }
         else if (Mathf.Abs(currentVelocity.x) > 0.05f)
@@ -154,4 +160,13 @@ public class PlayerMovements : MonoBehaviour
     {
         randomTime = Random.Range(2f, 5f);
     }
+    private void playSound()
+    {
+        if (source.isPlaying != true)
+        {
+            int randomNumber = Random.Range(0, 4);
+            source.PlayOneShot(listSound[randomNumber]);
+        }
+    }
+    
 }
