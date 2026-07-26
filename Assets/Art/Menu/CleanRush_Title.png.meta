@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 6b52a0ea180f622489f18a436b7e989c
+guid: d05571c4afaca2343be1ed9cd5b2d775
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4572590756824904564
-    second: BackGround_Menu_0
+      213: 3963557118429446239
+    second: CleanRush_Title_0
+  - first:
+      213: -6403101765236437596
+    second: CleanRush_Title_1
+  - first:
+      213: -8548147561517593753
+    second: CleanRush_Title_2
+  - first:
+      213: -5329295122163334255
+    second: CleanRush_Title_3
+  - first:
+      213: -672460199583972316
+    second: CleanRush_Title_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +52,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,23 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackGround_Menu_0
+      name: CleanRush_Title_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 240
-        height: 135
+        x: 9
+        y: 31
+        width: 109
+        height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8c873ceee4ea80c0800000000000000
-      internalID: -4572590756824904564
+      spriteID: 4adc76e9edc9327a0800000000000000
+      internalID: -6403101765236437596
       vertices: []
       indices: 
       edges: []
@@ -125,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1035715782a37d04789c63cd33e83ddd
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +145,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BackGround_Menu_0: -4572590756824904564
+      CleanRush_Title_0: 3963557118429446239
+      CleanRush_Title_1: -6403101765236437596
+      CleanRush_Title_2: -8548147561517593753
+      CleanRush_Title_3: -5329295122163334255
+      CleanRush_Title_4: -672460199583972316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
