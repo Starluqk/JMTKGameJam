@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3684915310331410413}
   - component: {fileID: 6544275160330375968}
   - component: {fileID: 3546280019398676110}
-  - component: {fileID: 2646777645327575356}
   - component: {fileID: 7199479783281617263}
+  - component: {fileID: 3035291932052684601}
+  - component: {fileID: 6905490840034180101}
   m_Layer: 14
   m_Name: Toilet
   m_TagString: Untagged
@@ -186,8 +187,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatedCleanable
   animator: {fileID: 0}
+  dirtItem: {fileID: 0}
+  dirtAnimator: {fileID: 0}
   brokenStateName: BrokenToilet
-  idleTriggerName: Cleaned
+  casserBoolName: IsBroken
   cleanSpeed: 0.5
   broomLayer:
     serializedVersion: 2
@@ -196,8 +199,32 @@ MonoBehaviour:
   audioclass:
     soundClass: []
     source: {fileID: 0}
-  Casser: IsBroken
---- !u!95 &2646777645327575356
+--- !u!114 &7199479783281617263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112762564736477930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b843d879e604374e8f7093344831469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedCleanable
+  animator: {fileID: 0}
+  dirtItem: {fileID: 0}
+  dirtAnimator: {fileID: 0}
+  brokenStateName: BrokenToilet
+  casserBoolName: IsBroken
+  cleanSpeed: 0.5
+  broomLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  itemGrabber: {fileID: 0}
+  audioclass:
+    soundClass: []
+    source: {fileID: 0}
+--- !u!95 &3035291932052684601
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -219,7 +246,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7199479783281617263
+--- !u!114 &6905490840034180101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,8 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatedCleanable
   animator: {fileID: 0}
+  dirtItem: {fileID: 0}
+  dirtAnimator: {fileID: 0}
   brokenStateName: BrokenToilet
-  idleTriggerName: Cleaned
+  casserBoolName: IsBroken
   cleanSpeed: 0.5
   broomLayer:
     serializedVersion: 2
@@ -242,7 +271,6 @@ MonoBehaviour:
   audioclass:
     soundClass: []
     source: {fileID: 0}
-  Casser: IsBroken
 --- !u!1 &5784619803749487599
 GameObject:
   m_ObjectHideFlags: 0

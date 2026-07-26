@@ -3,27 +3,25 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ToiletCleaner : MonoBehaviour
 {
-    [Header("Animation & Nettoyage")]
+    [Header("Animation & Visuels")]
     [SerializeField] private Animator animator;
+    [SerializeField] private string casserBoolName = "IsBroken";
 
-    [Tooltip("Nom EXACT du State/Animation du Toilette Cassée dans l'Animator")]
-    [SerializeField] private string brokenStateName = "BrokenToilet";
+    [Header("Préfab à Nettoyer")]
+    [SerializeField] private GameObject dirtPrefab;
+    [SerializeField] private Vector3 spawnOffset = new Vector3(0.105f, -0.4f, 0f);
 
-    [Tooltip("Nom du Trigger de transition vers Idle (ex: Cleaned)")]
-    [SerializeField] private string idleTriggerName = "Cleaned";
-
-    [Tooltip("Vitesse de nettoyage/rembobinage quand on frotte")]
+    [Header("Réglages du Nettoyage")]
     [SerializeField] private float cleanSpeed = 0.5f;
 
     [Header("Identification de l'outil")]
-    [Tooltip("Layer du balai")]
     [SerializeField] private LayerMask broomLayer;
     [SerializeField] private ItemGrabber itemGrabber;
     [SerializeField] private audioclass audioclass;
-    [SerializeField] private string Casser = "IsBroken";
 
-    private float currentProgress = 1f;
-    private bool isFullyCleaned = false;
+    private float currentCleanAmount = 0f;
+    private bool isFullyCleaned = true;
+    private GameObject currentDirtInstance;
 
     private void Awake()
     {
@@ -32,6 +30,28 @@ public class ToiletCleaner : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
+    }
+
+    public void SetChiotte()
+    {
+        if (currentDirtInstance != null)
+        {
+            Destroy(currentDirtInstance);
+        }
+
+        isFullyCleaned = false;
+        currentCleanAmount = 0f;
+
+        if (animator != null)
+        {
+            animator.SetBool(casserBoolName, true);
+        }
+
+        if (dirtPrefab != null)
+        {
+            Vector3 spawnPosition = transform.position + spawnOffset;
+            currentDirtInstance = Instantiate(dirtPrefab, spawnPosition, Quaternion.identity, transform);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -62,24 +82,24 @@ public class ToiletCleaner : MonoBehaviour
         if (itemGrabber == null) return false;
         return itemGrabber.GrabbedGameObject == broomObject;
     }
-    public void SetChiotte()
-    {
-        animator.SetBool(Casser, true);
-    }
+
     private void CleanProgress(float amount)
     {
-        currentProgress -= amount;
-        currentProgress = Mathf.Clamp01(currentProgress);
+        currentCleanAmount += amount;
 
-        if (animator != null)
-        {
-            animator.Play(brokenStateName, 0, currentProgress);
-        }
-
-        if (currentProgress <= 0.01f)
+        if (currentCleanAmount >= 1f)
         {
             isFullyCleaned = true;
-            animator.SetBool(Casser, false);
+
+            if (animator != null)
+            {
+                animator.SetBool(casserBoolName, false);
+            }
+
+            if (currentDirtInstance != null)
+            {
+                Destroy(currentDirtInstance);
+            }
 
             if (ScoreManager.Instance != null)
             {
