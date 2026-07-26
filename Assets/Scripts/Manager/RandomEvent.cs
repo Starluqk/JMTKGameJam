@@ -14,11 +14,7 @@ public class RandomEvent : MonoBehaviour
     void Start()
     {
         scoreManager = FindAnyObjectByType<ScoreManager>();
-        timeEvent = new float[minTimeEvent.Length];
-        for (int i = 0; i < minTimeEvent.Length; i++)
-        {
-            timeEvent[i] = Random.Range(minTimeEvent[i], maxTimeEvent[i]);
-        }
+        
     }
 
     // Update is called once per frame
@@ -44,6 +40,21 @@ public class RandomEvent : MonoBehaviour
             {
                 obj.GetComponent<ToiletEvent>().SetRandomEvent(gameObject.GetComponent<RandomEvent>());
             }
+        }
+    }
+
+    public void SetTimeEvent(float[] minte, float[] maxte)
+    {
+        minTimeEvent = minte;
+        maxTimeEvent = maxte;
+    }
+
+    public void EventTime()
+    {
+        timeEvent = new float[minTimeEvent.Length];
+        for (int i = 0; i < minTimeEvent.Length; i++)
+        {
+            timeEvent[i] = Random.Range(minTimeEvent[i], maxTimeEvent[i]);
         }
     }
     

@@ -94,6 +94,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be527eb74a6d07949a9626e342055ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavMeshSpawner
+  trashData:
+    easy: 3
+    normal: 2
+    hard: 2
+  eventTime:
+    easy:
+      minSpawnCount:
+      - 30
+      maxSpawnCount:
+      - 45
+    normal:
+      minSpawnCount:
+      - 60
+      - 40
+      maxSpawnCount:
+      - 65
+      - 30
+    hard:
+      minSpawnCount:
+      - 100
+      - 65
+      - 25
+      maxSpawnCount:
+      - 105
+      - 70
+      - 35
+  difficultyData:
+    easy: 75
+    normal: 90
+    hard: 120
   spawnGroups:
   - groupName: Trash
     prefabsToSpawn:
@@ -108,8 +138,6 @@ MonoBehaviour:
     - {fileID: 1634989039602593741, guid: 127bd3bcbb843b8419c0bb06cfefe8c3, type: 3}
     - {fileID: 1634989039602593741, guid: 32fdef010cc951e4489e722a2c1b9c1d, type: 3}
     - {fileID: 1634989039602593741, guid: 8bd326c00bdf448459f3ba5f0aba96d7, type: 3}
-    time: 75
-    trashNumber: 3
     easy:
       minSpawnCount: 3
       maxSpawnCount: 4
@@ -125,8 +153,6 @@ MonoBehaviour:
     - {fileID: 143312872328887880, guid: 1c1de7337cb2e8d48acba52abe58b7ab, type: 3}
     - {fileID: 143312872328887880, guid: e93b6c4c41f3bbf4aaa76895e9008002, type: 3}
     - {fileID: 143312872328887880, guid: 579f66b1fd280e541af6719b9eac47d7, type: 3}
-    time: 90
-    trashNumber: 2
     easy:
       minSpawnCount: 4
       maxSpawnCount: 5
@@ -142,8 +168,6 @@ MonoBehaviour:
     - {fileID: 4551979896100530570, guid: 663bf7958cc931c48858dd5d507e20bb, type: 3}
     - {fileID: 4551979896100530570, guid: 76d327ae475047b4785415b3065d1fc9, type: 3}
     - {fileID: 4551979896100530570, guid: 7a6d877c9bc8b7e498a51fd9c95ff7c7, type: 3}
-    time: 120
-    trashNumber: 2
     easy:
       minSpawnCount: 1
       maxSpawnCount: 1
@@ -156,8 +180,6 @@ MonoBehaviour:
   - groupName: Chicken
     prefabsToSpawn:
     - {fileID: 4957758102620521798, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
-    time: 0
-    trashNumber: 0
     easy:
       minSpawnCount: 0
       maxSpawnCount: 0

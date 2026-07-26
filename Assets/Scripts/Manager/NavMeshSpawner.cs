@@ -39,7 +39,22 @@ public class NavMeshSpawner : MonoBehaviour
         public float normal = 90f;
         public float hard = 120f;
     }
-
+    
+    [System.Serializable]
+    public class DifficultyEventTime
+    {
+        public EventTimeData easy;
+        public EventTimeData normal;
+        public EventTimeData hard;
+    }
+   
+    [System.Serializable]
+    public class EventTimeData
+    {
+        [Min(0)] public float[] minSpawnCount;
+        [Min(0)] public float[] maxSpawnCount;
+    }
+    [SerializeField] private DifficultyEventTime eventTime;
     [SerializeField] private DifficultyTime difficultyData;
 
     [Header("Groupes de Spawns")]
@@ -65,6 +80,9 @@ public class NavMeshSpawner : MonoBehaviour
         ScoreManager sM = FindAnyObjectByType<ScoreManager>();
         sM.SetGameDuration(GetTimeNumber());
         sM.StartTimer();
+        RandomEvent rE = FindAnyObjectByType<RandomEvent>();
+        rE.SetTimeEvent(GetTimeData(eventTime).minSpawnCount, GetTimeData(eventTime).maxSpawnCount);
+        rE.EventTime();
         if (spawnOnStart)
         {
             SpawnAll();
@@ -189,6 +207,25 @@ public class NavMeshSpawner : MonoBehaviour
             case 1: return difficultyData.normal;
             case 2: return difficultyData.hard;
             default: return difficultyData.normal;
+        }
+    }
+    
+    
+    private EventTimeData GetTimeData(DifficultyEventTime group)
+    {
+        switch (difficultyLevel)
+        {
+            case 0:
+                return group.easy;
+
+            case 1:
+                return group.normal;
+
+            case 2:
+                return group.hard;
+
+            default:
+                return group.normal;
         }
     }
 }
