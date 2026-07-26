@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     private string shake = "IsGood";
     
     private float gameDurationStay = 0;
-    private float timeRemaining;
+    private float timeRemaining = 50f;
     private int maxTrashCountTracked = 0;
     private bool isGameOver = false;
     

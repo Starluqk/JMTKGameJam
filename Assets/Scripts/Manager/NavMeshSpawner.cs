@@ -59,10 +59,10 @@ public class NavMeshSpawner : MonoBehaviour
     {
         difficultyLevel = gameObject.GetComponent<Difficulty>().GetDifficulty();
         difficultyLevel--;
-        SetRandomTrash trashes = GetComponent<SetRandomTrash>();
+        SetRandomTrash trashes = FindAnyObjectByType<SetRandomTrash>();
         trashes.SetNumberTrash(GetTrashNumber());
         trashes.SetTrashSelected();
-        ScoreManager sM = GetComponent<ScoreManager>();
+        ScoreManager sM = FindAnyObjectByType<ScoreManager>();
         sM.SetGameDuration(GetTimeNumber());
         sM.StartTimer();
         if (spawnOnStart)
