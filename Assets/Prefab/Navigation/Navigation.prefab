@@ -97,7 +97,7 @@ MonoBehaviour:
   trashData:
     easy: 3
     normal: 2
-    hard: 2
+    hard: 1
   eventTime:
     easy:
       minSpawnCount:
@@ -145,8 +145,8 @@ MonoBehaviour:
       minSpawnCount: 5
       maxSpawnCount: 6
     hard:
-      minSpawnCount: 7
-      maxSpawnCount: 8
+      minSpawnCount: 9
+      maxSpawnCount: 10
   - groupName: SinkItem
     prefabsToSpawn:
     - {fileID: 143312872328887880, guid: 74f482d1684540945bef97fe2583ef49, type: 3}
@@ -160,8 +160,8 @@ MonoBehaviour:
       minSpawnCount: 5
       maxSpawnCount: 6
     hard:
-      minSpawnCount: 1
-      maxSpawnCount: 5
+      minSpawnCount: 5
+      maxSpawnCount: 7
   - groupName: Vomit/Mud
     prefabsToSpawn:
     - {fileID: 4551979896100530570, guid: 83993ee1eeab780499e1792e7b5638b5, type: 3}
@@ -175,8 +175,8 @@ MonoBehaviour:
       minSpawnCount: 1
       maxSpawnCount: 2
     hard:
-      minSpawnCount: 2
-      maxSpawnCount: 3
+      minSpawnCount: 3
+      maxSpawnCount: 6
   - groupName: Chicken
     prefabsToSpawn:
     - {fileID: 4957758102620521798, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
