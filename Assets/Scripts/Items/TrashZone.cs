@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class TrashZone : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private LayerMask trashLayer;
     
-    [SerializeField] private audioclass audioclass;
+    [SerializeField] private AudioClip[] SoundList;
+    [SerializeField] private AudioSource source;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,8 +22,8 @@ public class TrashZone : MonoBehaviour
             {
                 ScoreManager.Instance.AddScore(100);
             }
-
-            audioclass.playClipOnce("destroy");
+            int randomNumber = Random.Range(1,3);
+            source.PlayOneShot(SoundList[randomNumber]);
 
             Destroy(obj);
         }

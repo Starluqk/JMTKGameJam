@@ -247,8 +247,12 @@ MonoBehaviour:
     m_Bits: 2048
   audioclass:
     soundClass:
-    - _clipName: destroy
-      _clip: {fileID: 8300000, guid: 86ac4b56e5bd6484b82781099f8b3014, type: 3}
+    - _clipName: dishes1
+      _clip: {fileID: 8300000, guid: da6caa3c479100940bbdeb4afb0b10d4, type: 3}
+    - _clipName: dishes2
+      _clip: {fileID: 8300000, guid: debe2663f59c0ad4da945c7a646307fb, type: 3}
+    - _clipName: dishes3
+      _clip: {fileID: 8300000, guid: 01fbffaf2c4abf34f956a8bb33dd4d3a, type: 3}
     source: {fileID: 2958561874137966307}
 --- !u!82 &2958561874137966307
 AudioSource:

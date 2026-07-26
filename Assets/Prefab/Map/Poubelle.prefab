@@ -182,8 +182,8 @@ GameObject:
   - component: {fileID: 1246284031342323948}
   - component: {fileID: 8196888424831598074}
   - component: {fileID: 2709924562463521695}
-  - component: {fileID: 6418650597364670592}
   - component: {fileID: 7389548529850517349}
+  - component: {fileID: 5497104755006794553}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -310,26 +310,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6418650597364670592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493677391003283716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a68c424f2951846977981924451f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrashZone
-  trashLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  audioclass:
-    soundClass:
-    - _clipName: destroy
-      _clip: {fileID: 8300000, guid: 86ac4b56e5bd6484b82781099f8b3014, type: 3}
-    source: {fileID: 7389548529850517349}
 --- !u!82 &7389548529850517349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -427,6 +407,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5497104755006794553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493677391003283716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a68c424f2951846977981924451f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashZone
+  trashLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  SoundList:
+  - {fileID: 8300000, guid: 86ac4b56e5bd6484b82781099f8b3014, type: 3}
+  - {fileID: 8300000, guid: 5e9019e263d37304ab6cea2ccd7cea16, type: 3}
+  - {fileID: 8300000, guid: 3742104f12af407429faefbf421f0b2f, type: 3}
+  - {fileID: 8300000, guid: c8827be25cd20484da97e41e5b1e85bd, type: 3}
+  - {fileID: 8300000, guid: 270bef4bfbec6b5499d37fe6f38bd2f1, type: 3}
+  source: {fileID: 7389548529850517349}
 --- !u!1 &8321186359107886246
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +440,6 @@ GameObject:
   - component: {fileID: 2703220008919337303}
   - component: {fileID: 4059227509674961129}
   - component: {fileID: 7723998054467443790}
-  - component: {fileID: 594326579360343342}
   m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
@@ -565,21 +566,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &594326579360343342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8321186359107886246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a68c424f2951846977981924451f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrashZone
-  trashLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  audioclass:
-    soundClass: []
-    source: {fileID: 0}

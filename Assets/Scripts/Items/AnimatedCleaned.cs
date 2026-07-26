@@ -3,88 +3,48 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ToiletCleaner : MonoBehaviour
 {
-    [Header("Animation & Nettoyage")]
+    [Header("Animation & Visuels")]
     [SerializeField] private Animator animator;
+    [SerializeField] private string casserBoolName = "IsBroken";
 
-    [Tooltip("Nom EXACT du State/Animation du Toilette Cassée dans l'Animator")]
-    [SerializeField] private string brokenStateName = "BrokenToilet";
+    [Header("Préfab à Nettoyer")]
+    [SerializeField] private GameObject dirtPrefab;
+    [SerializeField] private Vector3 spawnOffset = new Vector3(0.105f, -0.4f, 0f);
 
-    [Tooltip("Nom du Trigger de transition vers Idle (ex: Cleaned)")]
-    [SerializeField] private string idleTriggerName = "Cleaned";
-
-    [Tooltip("Vitesse de nettoyage/rembobinage quand on frotte")]
-    [SerializeField] private float cleanSpeed = 0.5f;
-
-    [Header("Identification de l'outil")]
-    [Tooltip("Layer du balai")]
-    [SerializeField] private LayerMask broomLayer;
-    [SerializeField] private ItemGrabber itemGrabber;
-    [SerializeField] private audioclass audioclass;
-    [SerializeField] private string Casser = "IsBroken";
-
-    private float currentProgress = 1f;
-    private bool isFullyCleaned = false;
+    private GameObject currentDirtInstance;
 
     private void Awake()
     {
-        if (itemGrabber == null)
-            itemGrabber = FindFirstObjectByType<ItemGrabber>();
-
         if (animator == null)
             animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
-        if (isFullyCleaned) return;
-
-        if ((broomLayer.value & (1 << other.gameObject.layer)) != 0)
+        if (currentDirtInstance == null && animator != null && animator.GetBool(casserBoolName))
         {
-            if (IsBroomGrabbed(other.gameObject))
-            {
-                float mouseMovement = Mathf.Abs(Input.GetAxis("Mouse X")) + Mathf.Abs(Input.GetAxis("Mouse Y"));
-
-                if (mouseMovement > 0.05f)
-                {
-                    CleanProgress(mouseMovement * cleanSpeed * Time.deltaTime);
-
-                    if (audioclass != null)
-                    {
-                        audioclass.playClipOnLoop("balais");
-                    }
-                }
-            }
+            animator.SetBool(casserBoolName, false);
         }
     }
 
-    private bool IsBroomGrabbed(GameObject broomObject)
-    {
-        if (itemGrabber == null) return false;
-        return itemGrabber.GrabbedGameObject == broomObject;
-    }
     public void SetChiotte()
     {
-        animator.SetBool(Casser, true);
-    }
-    private void CleanProgress(float amount)
-    {
-        currentProgress -= amount;
-        currentProgress = Mathf.Clamp01(currentProgress);
+        if (currentDirtInstance != null)
+        {
+            Destroy(currentDirtInstance);
+        }
 
         if (animator != null)
         {
-            animator.Play(brokenStateName, 0, currentProgress);
+            animator.SetBool(casserBoolName, true);
         }
 
-        if (currentProgress <= 0.01f)
+        if (dirtPrefab != null)
         {
-            isFullyCleaned = true;
-            animator.SetBool(Casser, false);
+            currentDirtInstance = Instantiate(dirtPrefab, transform.position, Quaternion.identity);
 
-            if (ScoreManager.Instance != null)
-            {
-                ScoreManager.Instance.AddScore(150);
-            }
+            Vector3 targetPosition = transform.position + spawnOffset;
+            currentDirtInstance.transform.position = targetPosition;
         }
     }
 }
