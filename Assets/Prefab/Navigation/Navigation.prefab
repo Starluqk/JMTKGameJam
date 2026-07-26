@@ -145,8 +145,8 @@ MonoBehaviour:
       minSpawnCount: 5
       maxSpawnCount: 6
     hard:
-      minSpawnCount: 9
-      maxSpawnCount: 10
+      minSpawnCount: 8
+      maxSpawnCount: 9
   - groupName: SinkItem
     prefabsToSpawn:
     - {fileID: 143312872328887880, guid: 74f482d1684540945bef97fe2583ef49, type: 3}
@@ -160,8 +160,8 @@ MonoBehaviour:
       minSpawnCount: 5
       maxSpawnCount: 6
     hard:
-      minSpawnCount: 5
-      maxSpawnCount: 7
+      minSpawnCount: 4
+      maxSpawnCount: 5
   - groupName: Vomit/Mud
     prefabsToSpawn:
     - {fileID: 4551979896100530570, guid: 83993ee1eeab780499e1792e7b5638b5, type: 3}
@@ -176,7 +176,7 @@ MonoBehaviour:
       maxSpawnCount: 2
     hard:
       minSpawnCount: 3
-      maxSpawnCount: 6
+      maxSpawnCount: 4
   - groupName: Chicken
     prefabsToSpawn:
     - {fileID: 4957758102620521798, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
@@ -188,7 +188,7 @@ MonoBehaviour:
       maxSpawnCount: 1
     hard:
       minSpawnCount: 1
-      maxSpawnCount: 2
+      maxSpawnCount: 1
   navMeshAreaMask: -1
   parentContainer: {fileID: 7997549562588026365}
   spawnOnStart: 1
