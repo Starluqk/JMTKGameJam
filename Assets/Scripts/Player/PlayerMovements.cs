@@ -43,7 +43,8 @@ public class PlayerMovements : MonoBehaviour
     private readonly string Down = "GoingDown";
     private readonly string Walk = "IsWalking";
     private readonly string Carrying = "IsCarrying";
-
+    private float time = 0f;
+    private float randomTime;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,6 +60,7 @@ public class PlayerMovements : MonoBehaviour
         {
             moveVFX.SendEvent(stopEventName);
         }
+        SetRandomTime();
     }
 
     private void Update()
@@ -93,8 +95,15 @@ public class PlayerMovements : MonoBehaviour
         {
             SetAnimState(up: false, down: false, walk: false);
         }
-
+        bool isMoving = currentVelocity.magnitude > 0.1f;
+        if (moveVFX && isMoving && time>randomTime)
+        {
+            moveVFX.SendEvent(playEventName);
+            time = 0f;
+            SetRandomTime();
+        }
         HandleVFXGraph();
+        time += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -139,5 +148,10 @@ public class PlayerMovements : MonoBehaviour
         animator.SetBool(Up, up);
         animator.SetBool(Down, down);
         animator.SetBool(Walk, walk);
+    }
+
+    private void SetRandomTime()
+    {
+        randomTime = Random.Range(2f, 5f);
     }
 }

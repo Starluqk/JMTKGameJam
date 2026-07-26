@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
@@ -21,6 +22,13 @@ public class ChickenRun : MonoBehaviour
     public GameObject player;
     
     private NavMeshAgent agent;
+    
+    [SerializeField] private float walkSpeed = 2.5f;
+    [SerializeField] private float runSpeed = 10f;
+    [SerializeField] private float walkRadius = 5f;
+    [SerializeField] private float waitBeforeNextWalk = 2f;
+
+    private float walkTimer;
 
     void Start()
     {
@@ -36,6 +44,10 @@ public class ChickenRun : MonoBehaviour
         grabber = FindFirstObjectByType<ItemGrabber>();
 
         FindPlayerByLayer();
+        keepSpeed = runSpeed;
+        agent.speed = walkSpeed;
+        walkTimer = waitBeforeNextWalk;
+        animator.SetBool(runningBool, true);
     }
 
     void Update()
@@ -47,7 +59,7 @@ public class ChickenRun : MonoBehaviour
         {
             agent.isStopped = false;
             playSound();
-            agent.speed = keepSpeed;
+            agent.speed = runSpeed;
 
             animator.SetBool(runningBool, true);
 
@@ -55,10 +67,20 @@ public class ChickenRun : MonoBehaviour
             {
                 destinationTimer = 0f;
 
-                Vector3 direction = (agent.nextPosition - player.transform.position).normalized;
-                Vector3 destination = agent.nextPosition + direction * 2f;
+                Vector3 direction = (transform.position - player.transform.position).normalized;
+                Vector3 desiredPosition = transform.position + direction * 5f;
 
-                agent.SetDestination(destination);
+                NavMeshHit hit;
+                if (NavMesh.SamplePosition(desiredPosition, out hit, 5f, NavMesh.AllAreas))
+                {
+                    NavMeshPath path = new NavMeshPath();
+
+                    if (agent.CalculatePath(hit.position, path) &&
+                        path.status == NavMeshPathStatus.PathComplete)
+                    {
+                        agent.SetDestination(hit.position);
+                    }
+                }
             }
 
             if (player.transform.position.x > transform.position.x)
@@ -71,13 +93,32 @@ public class ChickenRun : MonoBehaviour
             }
         }
 
-        if (grabber.chickenIsGrabbed == true || distance > distanceView)
+        if ( distance > distanceView)
+        {
+            agent.speed = walkSpeed;
+
+            //animator.SetBool(runningBool, false);
+
+            walkTimer -= Time.deltaTime;
+
+            if (!agent.pathPending && agent.remainingDistance < 0.3f)
+            {
+                if (walkTimer <= 0)
+                {
+                    walkTimer = Random.Range(1f, 4f);
+                    SetRandomDestination();
+                }
+            }
+            stopplaying();
+            
+        }
+
+        if (!grabber.GetGrabObject().IsUnityNull() && grabber.GetGrabObject().GetEntityId() == gameObject.GetEntityId())
         {
             agent.isStopped = true;
-            stopplaying();
             animator.SetBool(runningBool, false);
         }
-        Debug.DrawLine(agent.nextPosition, agent.destination, Color.red);
+            Debug.DrawLine(agent.nextPosition, agent.destination, Color.red);
     }
     private void FindPlayerByLayer()
     {
@@ -121,5 +162,24 @@ public class ChickenRun : MonoBehaviour
     private void stopplaying()
     {
         source.Stop();
+    }
+    
+    private void SetRandomDestination()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle * walkRadius;
+        Vector3 wantedPosition = transform.position + new Vector3(randomDirection.x, randomDirection.y, 0);
+
+        NavMeshHit hit;
+
+        if (NavMesh.SamplePosition(wantedPosition, out hit, walkRadius, NavMesh.AllAreas))
+        {
+            NavMeshPath path = new NavMeshPath();
+
+            if (agent.CalculatePath(hit.position, path) &&
+                path.status == NavMeshPathStatus.PathComplete)
+            {
+                agent.SetDestination(hit.position);
+            }
+        }
     }
 }

@@ -266,4 +266,9 @@ public class ItemGrabber : MonoBehaviour
             Gizmos.DrawWireSphere(holdPoint.position, grabRadius);
         }
     }
+
+    public GameObject GetGrabObject()
+    {
+        return GrabbedGameObject;
+    }
 }
