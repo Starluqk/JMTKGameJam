@@ -746,7 +746,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4717777397836983427, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
   m_PrefabInstance: {fileID: 8068579034379422183}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953056410}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f09b2dc08b60242986fa45baca9f93, type: 3}
@@ -945,11 +945,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845644788}
   m_CullTransparentMesh: 1
---- !u!1 &953056410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7270027290067161936, guid: 8c75fed4fb1545141acbd988c00d1ce7, type: 3}
-  m_PrefabInstance: {fileID: 8068579034379422183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404238695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,13 +1944,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 953056410}
-        m_TargetAssemblyTypeName: Difficulty, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 479559355}
+        m_TargetAssemblyTypeName: ManagerMenuDebut, Assembly-CSharp
+        m_MethodName: LoadHouse1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
