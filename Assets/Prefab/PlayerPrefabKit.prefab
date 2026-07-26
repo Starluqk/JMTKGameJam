@@ -237,6 +237,13 @@ MonoBehaviour:
   playEventName: OnRun
   itemGrabber: {fileID: 1289225968343991345}
   playerSprite: {fileID: 1158899498086480627}
+  source: {fileID: 6808527372755425685}
+  listSound:
+  - {fileID: 8300000, guid: 5773de00d0a1aaf46b5a9d1e4bf1b8b2, type: 3}
+  - {fileID: 8300000, guid: 53f49c0da0fab6b4096939e4001b2a9e, type: 3}
+  - {fileID: 8300000, guid: bc40cb6306de9f54983f9fe5c3e0de1f, type: 3}
+  - {fileID: 8300000, guid: eee53582db15a5e45b94c30b034203b6, type: 3}
+  - {fileID: 8300000, guid: 15ffeb44ef39fc742a0f9c608098c182, type: 3}
 --- !u!95 &5795650965727428498
 Animator:
   serializedVersion: 7
