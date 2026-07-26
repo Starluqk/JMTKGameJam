@@ -11,10 +11,12 @@ public class ChickenSpawner : MonoBehaviour
     private Vector2 offset;
 
     private Vector3 spawnPos;
+
+    [SerializeField] private int numberOfSpawn = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < numberOfSpawn; i++)
         {
             point = spawnPoint[Random.Range(0, spawnPoint.Length)].transform;
 

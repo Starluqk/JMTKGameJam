@@ -9,12 +9,14 @@ public class audioclass
 
     public void playClipOnce(string name)
     {
-        foreach (var soundClass in soundClass)
+        foreach (var soundClass1 in soundClass)
         {
             source.Stop();
-            if (name == soundClass._clipName)
+            Debug.Log(name + " " + soundClass1._clipName);
+            Debug.Log(name == soundClass1._clipName);
+            if (name == soundClass1._clipName)
             {
-                source.PlayOneShot(soundClass._clip);
+                source.PlayOneShot(soundClass1._clip);
             }
         }
     }

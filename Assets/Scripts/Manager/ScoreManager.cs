@@ -138,6 +138,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("LOOSE !");
             audioclass.playClipOnce("loose");
             if (endPanel != null)
             {
