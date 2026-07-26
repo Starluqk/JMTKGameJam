@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject messageBegin;
+    [SerializeField] private GameObject phone;
     public bool isPlaying;
     private bool playOnce = false;
 
@@ -234,6 +235,7 @@ public class ScoreManager : MonoBehaviour
     public void BeginMessage()
     {
         messageBegin.SetActive(false);
+        phone.SetActive(false);
         Time.timeScale = 1f;
         isPlaying = true;
     }
