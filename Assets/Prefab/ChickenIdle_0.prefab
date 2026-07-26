@@ -84,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25
   m_Sprite: {fileID: 1984122609184600595, guid: 2ad15046413b1d04ca268474b3f52d68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_Size: {x: 0.11, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7410169366237911903
@@ -141,6 +141,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ef5c1665d20ff8647a628afb20b330f0, type: 3}
   - {fileID: 8300000, guid: df6330b808eebd84c8b889e9909bd31d, type: 3}
   player: {fileID: 0}
+  walkSpeed: 2.5
+  runSpeed: 10
+  walkRadius: 5
+  waitBeforeNextWalk: 2
 --- !u!50 &7082663734092173142
 Rigidbody2D:
   serializedVersion: 5
