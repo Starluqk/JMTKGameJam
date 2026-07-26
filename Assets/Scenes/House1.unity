@@ -2470,6 +2470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6035921261966820591, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6637094182978333769, guid: 3659d276d0ba39a42a0b6188e70445fd, type: 3}
       propertyPath: _playerTransform
       value: 

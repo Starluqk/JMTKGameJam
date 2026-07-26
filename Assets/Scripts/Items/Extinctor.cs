@@ -13,6 +13,10 @@ public class Extinctor : MonoBehaviour
     [SerializeField] private float distanceMax = 2.5f;
     [SerializeField] private float angleMax = 15f;
     [SerializeField] private audioclass audioclass;
+    private float time = 0f;
+    [SerializeField] private string EventName = "On Spray";
+    [SerializeField] private string stopEventName = "OnStop";
+    private bool isSpraying;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,11 +30,19 @@ public class Extinctor : MonoBehaviour
     {
         if (Input.GetMouseButton(1) && grabber.extinctorIsGrabbed)
         {
+            time = 0f;
             _spray.SetActive(true);
+            
             audioclass.playClipOnLoop("son");
             direction =transform.position -  _playerTransform.position;
             direction.z = 0;
             _vfxSpray.SetVector3("Spray", direction);
+            if (!isSpraying)
+            {
+                isSpraying = true;
+                _vfxSpray.Play();
+            }
+            
             Vector3 directionSpray = direction.normalized;
 
             Collider2D[] objets = Physics2D.OverlapCircleAll(transform.position, distanceMax);
@@ -62,8 +74,16 @@ public class Extinctor : MonoBehaviour
         }
         else
         {
-            _spray.SetActive(false);
+            isSpraying = false;
             audioclass.stopAudio();
+            _vfxSpray.Stop();
+            time += Time.deltaTime;
+            if (time > 1.5f)
+            {
+                _spray.SetActive(false);
+                
+            }
+            
         }
     }
 }
