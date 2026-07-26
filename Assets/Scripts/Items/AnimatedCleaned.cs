@@ -5,6 +5,7 @@ public class ToiletCleaner : MonoBehaviour
 {
     [Header("Animation & Visuels")]
     [SerializeField] private Animator animator;
+    [SerializeField] private audioclass audioclass;
     [SerializeField] private string casserBoolName = "IsBroken";
 
     [Header("Préfab à Nettoyer")]
@@ -21,10 +22,7 @@ public class ToiletCleaner : MonoBehaviour
 
     private void Update()
     {
-        if (currentDirtInstance == null && animator != null && animator.GetBool(casserBoolName))
-        {
-            animator.SetBool(casserBoolName, false);
-        }
+
     }
 
     public void SetChiotte()
@@ -41,6 +39,10 @@ public class ToiletCleaner : MonoBehaviour
 
         if (dirtPrefab != null)
         {
+            if (audioclass != null)
+            {
+                audioclass.playClipOnce("toiletBroke");
+            }
             currentDirtInstance = Instantiate(dirtPrefab, transform.position, Quaternion.identity);
 
             Vector3 targetPosition = transform.position + spawnOffset;

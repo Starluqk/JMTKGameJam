@@ -13,7 +13,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultTextVictory;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
-    [SerializeField] private Animator animator;
 
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
@@ -25,9 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private audioclass audioclass;
 
-    private int currentScore = 0;
-    private string shake = "IsGood";
-    
+    private int currentScore = 0;    
     private float gameDurationStay = 0;
     private float timeRemaining = 50f;
     private int maxTrashCountTracked = 0;
@@ -51,6 +48,10 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("OUAIIIS JE JOUE LE SON");
+        }
         if (isGameOver) return;
 
         int currentTrashCount = CountTrashObjects();
@@ -71,30 +72,6 @@ public class ScoreManager : MonoBehaviour
         else
         {
             UpdateTimerUI();
-        }
-
-        
-
-        if (timeRemaining <= 30 && timeRemaining >= 10)
-        {
-            animator.SetBool(shake,true);
-        }
-
-        if (timeRemaining <= 10)
-        {
-            animator.SetBool(shake, false);
-            if (gameDurationStay >= 1f && gameDurationStay < 2f)
-            {
-                timerText.transform.localScale = new Vector3(2f, 2f, 2f);
-                timerText.color = Color.white;
-            }
-
-            if (gameDurationStay >= 2f)
-            {
-                gameDurationStay = 0f;
-                timerText.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
-                timerText.color = Color.red;
-            }
         }
     }
 
@@ -152,14 +129,11 @@ public class ScoreManager : MonoBehaviour
 
         if (isVictory)
         {
-            audioclass.playClipOnce("victory");
+ 
             if (victoryPanel != null)
             {
+                audioclass.playClipOnce("victory");
                 victoryPanel.SetActive(true);
-            }
-            else if (endPanel != null)
-            {
-                endPanel.SetActive(true);
             }
         }
         else

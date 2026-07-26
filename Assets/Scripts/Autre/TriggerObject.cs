@@ -20,7 +20,7 @@ public class TriggerObject : MonoBehaviour
         _boxCollider.GetComponent<OnTriggerObject>().SetObj(gameObject, _itemHasToGetHigher);
         BoxCollider2D triggerZone = _boxCollider.GetComponent<BoxCollider2D>();
         SpriteRenderer objectSprite = GetComponent<SpriteRenderer>();
-        Debug.Log(_selfBoxCollider.IsUnityNull());
+        //Debug.Log(_selfBoxCollider.IsUnityNull());
         if (!triggerZone.IsUnityNull() && !objectSprite.IsUnityNull() && !_selfBoxCollider.IsUnityNull())
         {
             float spriteWidth = objectSprite.bounds.size.x / transform.lossyScale.x;
