@@ -6,12 +6,18 @@ public class ManagerMenuDebut : MonoBehaviour
 {
     public Animator transition;
     public Animator textFade;
+    private string Returned = "Return";
     public void OnStart()
     {
-        Time.timeScale = 1.0f;
         LoadNextScene();
-    }
 
+    }
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+        transition.SetBool(Returned, true);
+        textFade.SetBool(Returned, true);
+    }
     public void OnApplicationQuit()
     {
         Application.Quit();
@@ -35,6 +41,8 @@ public class ManagerMenuDebut : MonoBehaviour
     {
         transition.SetTrigger("Start");
         textFade.SetTrigger("Start");
+        transition.SetBool(Returned, false);
+        textFade.SetBool(Returned, false);
 
         yield return new WaitForSeconds(1);
 
