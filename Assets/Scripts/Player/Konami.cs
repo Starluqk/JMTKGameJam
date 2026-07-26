@@ -11,7 +11,7 @@ public class KonamiCode : MonoBehaviour
     [Header("Settings")]
     public float inputExpiration = 0.5f;
 
-    [Header("Élargissement du Personnage")]
+    [Header("ï¿½largissement du Personnage")]
     [SerializeField] private float scaleDelay = 3f; 
     [SerializeField] private float resizeDuration = 2f; 
     [SerializeField] private float targetScaleX = 2f; 
@@ -68,7 +68,7 @@ public class KonamiCode : MonoBehaviour
     {
         isActivated = true;
 
-        Debug.Log("<color=lime>KONAMI CODE RÉUSSI !</color>");
+        Debug.Log("<color=lime>KONAMI CODE Rï¿½USSI !</color>");
 
         if (audioSource != null && secretMusic != null)
         {
@@ -101,4 +101,7 @@ public class KonamiCode : MonoBehaviour
 
         transform.localScale = targetScale;
     }
+    
+    
+    
 }

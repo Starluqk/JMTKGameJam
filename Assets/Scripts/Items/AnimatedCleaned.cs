@@ -8,7 +8,7 @@ public class ToiletCleaner : MonoBehaviour
     [SerializeField] private audioclass audioclass;
     [SerializeField] private string casserBoolName = "IsBroken";
 
-    [Header("Préfab à Nettoyer")]
+    [Header("Prï¿½fab ï¿½ Nettoyer")]
     [SerializeField] private GameObject dirtPrefab;
     [SerializeField] private Vector3 spawnOffset = new Vector3(0.105f, -0.4f, 0f);
 
@@ -22,7 +22,6 @@ public class ToiletCleaner : MonoBehaviour
 
     private void Update()
     {
-
     }
 
     public void SetChiotte()

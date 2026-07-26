@@ -7,6 +7,7 @@ public class ManagerMenuDebut : MonoBehaviour
     public Animator transition;
     public Animator textFade;
     private string Returned = "Return";
+    private int secret = 0;
     public void OnStart()
     {
         LoadNextScene();
@@ -57,5 +58,16 @@ public class ManagerMenuDebut : MonoBehaviour
     public void LoadChooseDifficulty()
     {
         SceneManager.LoadScene("ChooseDifficulty");
+    }
+
+    public void LoadHouse1()
+    {
+        secret++;
+        if (secret > 5)
+        {
+            secret = 0;
+            SceneManager.LoadScene("House1");
+        }
+        
     }
 }

@@ -98,6 +98,7 @@ MonoBehaviour:
     easy: 3
     normal: 2
     hard: 1
+    chicken: 4
   eventTime:
     easy:
       minSpawnCount:
@@ -120,10 +121,14 @@ MonoBehaviour:
       - 105
       - 70
       - 35
+    chicken:
+      minSpawnCount: []
+      maxSpawnCount: []
   difficultyData:
     easy: 75
     normal: 90
     hard: 120
+    chicken: 100
   spawnGroups:
   - groupName: Trash
     prefabsToSpawn:
@@ -147,6 +152,9 @@ MonoBehaviour:
     hard:
       minSpawnCount: 8
       maxSpawnCount: 9
+    chicken:
+      minSpawnCount: 0
+      maxSpawnCount: 0
   - groupName: SinkItem
     prefabsToSpawn:
     - {fileID: 143312872328887880, guid: 74f482d1684540945bef97fe2583ef49, type: 3}
@@ -162,6 +170,9 @@ MonoBehaviour:
     hard:
       minSpawnCount: 4
       maxSpawnCount: 5
+    chicken:
+      minSpawnCount: 0
+      maxSpawnCount: 0
   - groupName: Vomit/Mud
     prefabsToSpawn:
     - {fileID: 4551979896100530570, guid: 83993ee1eeab780499e1792e7b5638b5, type: 3}
@@ -177,6 +188,9 @@ MonoBehaviour:
     hard:
       minSpawnCount: 3
       maxSpawnCount: 4
+    chicken:
+      minSpawnCount: 0
+      maxSpawnCount: 0
   - groupName: Chicken
     prefabsToSpawn:
     - {fileID: 4957758102620521798, guid: 59d43082e5665534ebfb91e0be552c5d, type: 3}
@@ -189,6 +203,9 @@ MonoBehaviour:
     hard:
       minSpawnCount: 1
       maxSpawnCount: 1
+    chicken:
+      minSpawnCount: 20
+      maxSpawnCount: 25
   navMeshAreaMask: -1
   parentContainer: {fileID: 7997549562588026365}
   spawnOnStart: 1

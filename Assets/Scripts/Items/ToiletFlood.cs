@@ -22,6 +22,7 @@ public class ToiletFlood : MonoBehaviour
             itemGrabber = FindFirstObjectByType<ItemGrabber>();
         }
 
+        audioclass.playClipOnLoop("flow");
         foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
         {
             if (!allRenderers.Contains(sr))

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -20,6 +21,9 @@ public class ScoreManager : MonoBehaviour
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
 
+    [Tooltip("Délai (en secondes) pendant lequel l'animation de fin se joue avant de mettre le jeu en pause et d'afficher le Canvas")]
+    [SerializeField] private float endGameDelay = 2.5f;
+
     [Tooltip("La liste de tous les Layers d'objets à prendre en compte dans le nettoyage")]
     [SerializeField] private List<LayerMask> trashLayers = new List<LayerMask>();
 
@@ -27,16 +31,14 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private audioclass audioclass;
 
-    private int currentScore = 0;    
+    private int currentScore = 0;
     private float gameDurationStay = 0;
     private float timeRemaining = 50f;
     private int maxTrashCountTracked = 0;
     private bool isGameOver = false;
-    
 
     private void Awake()
     {
-        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -47,16 +49,12 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log("OUAIIIS JE JOUE LE SON");
-        }
+
         if (isGameOver) return;
 
         int currentTrashCount = CountTrashObjects();
@@ -79,7 +77,7 @@ public class ScoreManager : MonoBehaviour
             UpdateTimerUI();
         }
 
-        if(gameDurationStay >= 0.7f && playOnce == false)
+        if (gameDurationStay >= 0.7f && playOnce == false)
         {
             isPlaying = false;
             messageBegin.SetActive(true);
@@ -116,6 +114,13 @@ public class ScoreManager : MonoBehaviour
     private void EndGame()
     {
         isGameOver = true;
+        StartCoroutine(EndGameRoutine());
+    }
+
+    private IEnumerator EndGameRoutine()
+    {
+        yield return new WaitForSecondsRealtime(endGameDelay);
+
         Time.timeScale = 0f;
 
         int remainingTrash = CountTrashObjects();
@@ -142,17 +147,15 @@ public class ScoreManager : MonoBehaviour
 
         if (isVictory)
         {
- 
             if (victoryPanel != null)
             {
-                audioclass.playClipOnce("victory");
+                if (audioclass != null) audioclass.playClipOnce("victory");
                 victoryPanel.SetActive(true);
             }
         }
         else
         {
-            Debug.Log("LOOSE !");
-            audioclass.playClipOnce("loose");
+            if (audioclass != null) audioclass.playClipOnce("loose");
             if (endPanel != null)
             {
                 endPanel.SetActive(true);
@@ -233,6 +236,5 @@ public class ScoreManager : MonoBehaviour
         messageBegin.SetActive(false);
         Time.timeScale = 1f;
         isPlaying = true;
-        
     }
 }

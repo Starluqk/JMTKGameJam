@@ -21,6 +21,7 @@ public class NavMeshSpawner : MonoBehaviour
        public DifficultySpawnData easy;
        public DifficultySpawnData normal;
        public DifficultySpawnData hard;
+       public DifficultySpawnData chicken;
    }
    
     [System.Serializable]
@@ -29,6 +30,7 @@ public class NavMeshSpawner : MonoBehaviour
         public int easy = 3;
         public int normal = 2;
         public int hard = 2;
+        public int chicken = 4;
     }
     [SerializeField] private DifficultyTrashData trashData;
     
@@ -38,6 +40,7 @@ public class NavMeshSpawner : MonoBehaviour
         public float easy = 75f;
         public float normal = 90f;
         public float hard = 120f;
+        public float chicken = 100f;
     }
     
     [System.Serializable]
@@ -46,6 +49,7 @@ public class NavMeshSpawner : MonoBehaviour
         public EventTimeData easy;
         public EventTimeData normal;
         public EventTimeData hard;
+        public EventTimeData chicken;
     }
    
     [System.Serializable]
@@ -182,6 +186,8 @@ public class NavMeshSpawner : MonoBehaviour
 
             case 2:
                 return group.hard;
+            case 3:
+                return group.chicken;
 
             default:
                 return group.normal;
@@ -195,6 +201,7 @@ public class NavMeshSpawner : MonoBehaviour
             case 0: return trashData.easy;
             case 1: return trashData.normal;
             case 2: return trashData.hard;
+            case 3: return trashData.chicken;
             default: return trashData.normal;
         }
     }
@@ -206,6 +213,7 @@ public class NavMeshSpawner : MonoBehaviour
             case 0: return difficultyData.easy;
             case 1: return difficultyData.normal;
             case 2: return difficultyData.hard;
+            case 3: return difficultyData.chicken;
             default: return difficultyData.normal;
         }
     }
@@ -223,7 +231,8 @@ public class NavMeshSpawner : MonoBehaviour
 
             case 2:
                 return group.hard;
-
+            case 3:
+                return group.chicken;
             default:
                 return group.normal;
         }
