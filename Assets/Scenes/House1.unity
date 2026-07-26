@@ -3719,17 +3719,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 351865912}
   m_SourcePrefab: {fileID: 100100000, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
---- !u!114 &1973291269 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1289225968343991345, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
-  m_PrefabInstance: {fileID: 1973291268}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d7a8aad1b2b9a4bb58a13ad9df78f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemGrab
 --- !u!4 &2018558076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8422454492344709737, guid: e3fa0a7ae726d5f489cb2691338bcf0e, type: 3}
@@ -4096,7 +4085,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.030089244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.6069327, y: 0.4448516}
     oldSize: {x: 0.13, y: 0.17}
     newSize: {x: 0.13, y: 0.17}
     adaptiveTilingThreshold: 0.5
@@ -4593,28 +4582,6 @@ PrefabInstance:
       addedObject: {fileID: 32805754}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4277e58008c86a649b5f8a4c40ea7146, type: 3}
---- !u!95 &4861003268021209754
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7357499643460673353}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b6d53b668b3d12445823407769606d7f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4912941831294172213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4805,15 +4772,7 @@ MonoBehaviour:
   animator: {fileID: 4723344017359557987, guid: 9c556e71971f57c4dabf5588e6846c3f, type: 3}
   casserBoolName: IsBroken
   dirtPrefab: {fileID: 1258451121760134298, guid: 9c556e71971f57c4dabf5588e6846c3f, type: 3}
-  spawnOffset: {x: 0.105, y: -0.04, z: 0}
-  cleanSpeed: 0.5
-  broomLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  itemGrabber: {fileID: 1973291269}
-  audioclass:
-    soundClass: []
-    source: {fileID: 0}
+  spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &6491622182405241634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4958,7 +4917,6 @@ GameObject:
   - component: {fileID: 6505792340102382158}
   - component: {fileID: 3727760911173592707}
   - component: {fileID: 6367157190815644461}
-  - component: {fileID: 4861003268021209754}
   m_Layer: 14
   m_Name: Toilet
   m_TagString: Untagged
@@ -5318,7 +5276,7 @@ Transform:
   m_GameObject: {fileID: 7357499643460673353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.41, y: 4.52, z: 0}
+  m_LocalPosition: {x: -13.28, y: 4.52, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children: []

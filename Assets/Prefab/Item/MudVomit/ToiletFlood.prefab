@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1258451121760134298}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.105, y: -0.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfddfb4f3e3738478706635d65ce3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToiletFlood
-  cleanSpeed: 0.5
+  cleanSpeed: 1
   broomLayer:
     serializedVersion: 2
     m_Bits: 256
