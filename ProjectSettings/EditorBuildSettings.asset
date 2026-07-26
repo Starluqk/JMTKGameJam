@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuDebut-Erwan.unity
     guid: a9bb62507e85b66429baa999e9c904d6
   - enabled: 1
+    path: Assets/Scenes/ChooseDifficulty.unity
+    guid: b908c56cb2a29b845a9bf00ee5a1cf8c
+  - enabled: 1
     path: Assets/Scenes/tuto.unity
     guid: c2e021cb8bff73642bd2c11fe000198a
   - enabled: 1

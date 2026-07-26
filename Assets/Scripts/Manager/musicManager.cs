@@ -8,7 +8,7 @@ public class musicManager : MonoBehaviour
     void Update()
     {
         Debug.Log(SceneManager.GetActiveScene().buildIndex + " < " + SceneManager.GetSceneByName("House1").buildIndex);
-        if (SceneManager.GetActiveScene().buildIndex < 3)
+        if (SceneManager.GetActiveScene().buildIndex < 4)
         {
             menuMusic.playClipOnLoop("MainMenuMusic");
         }

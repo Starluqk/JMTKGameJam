@@ -40,4 +40,14 @@ public class ManagerMenuDebut : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void LoadChooseDifficulty()
+    {
+        SceneManager.LoadScene("ChooseDifficulty");
+    }
 }
