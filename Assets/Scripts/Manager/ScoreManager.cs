@@ -13,6 +13,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultTextVictory;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject messageBegin;
+    public bool isPlaying;
+    private bool playOnce = false;
 
     [Header("Paramètres du Jeu")]
     [SerializeField] private float gameDuration = 60f;
@@ -33,6 +36,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -48,6 +52,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("OUAIIIS JE JOUE LE SON");
@@ -72,6 +77,14 @@ public class ScoreManager : MonoBehaviour
         else
         {
             UpdateTimerUI();
+        }
+
+        if(gameDurationStay >= 0.7f && playOnce == false)
+        {
+            isPlaying = false;
+            messageBegin.SetActive(true);
+            Time.timeScale = 0f;
+            playOnce = true;
         }
     }
 
@@ -213,5 +226,13 @@ public class ScoreManager : MonoBehaviour
 
         UpdateScoreUI();
         UpdateTimerUI();
+    }
+
+    public void BeginMessage()
+    {
+        messageBegin.SetActive(false);
+        Time.timeScale = 1f;
+        isPlaying = true;
+        
     }
 }
