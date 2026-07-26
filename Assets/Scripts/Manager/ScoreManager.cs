@@ -23,6 +23,8 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private string scorePrefix = "Score : ";
 
+    [SerializeField] private audioclass audioclass;
+
     private int currentScore = 0;
     private string shake = "IsGood";
     
@@ -150,6 +152,7 @@ public class ScoreManager : MonoBehaviour
 
         if (isVictory)
         {
+            audioclass.playClipOnce("victory");
             if (victoryPanel != null)
             {
                 victoryPanel.SetActive(true);
@@ -161,6 +164,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            audioclass.playClipOnce("loose");
             if (endPanel != null)
             {
                 endPanel.SetActive(true);
