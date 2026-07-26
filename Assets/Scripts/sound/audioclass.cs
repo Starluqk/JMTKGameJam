@@ -17,6 +17,7 @@ public class audioclass
             if (name == soundClass1._clipName)
             {
                 source.PlayOneShot(soundClass1._clip);
+                return;
             }
         }
     }
