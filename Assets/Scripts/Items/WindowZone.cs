@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WindowZone : MonoBehaviour
 {
     [Header("Configuration")]
 
     [SerializeField] private LayerMask windowLayer;
+
+    [SerializeField] private audioclass audioclass;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +23,7 @@ public class WindowZone : MonoBehaviour
                 ScoreManager.Instance.AddScore(200);
             }
 
+            audioclass.playClipOnce("chikenout");
             Destroy(obj);
         }
     }

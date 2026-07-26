@@ -146,10 +146,11 @@ MonoBehaviour:
   broomLayer:
     serializedVersion: 2
     m_Bits: 256
+  itemGrabber: {fileID: 0}
   audioclass:
     soundClass:
     - _clipName: balais
-      _clip: {fileID: 8300000, guid: 8ea9408991328704f8f43ddd73c5f1e4, type: 3}
+      _clip: {fileID: 8300000, guid: 74e38edef7a8ec745ad148ff3400b4b1, type: 3}
     source: {fileID: 3889552459885873352}
 --- !u!82 &3889552459885873352
 AudioSource:
