@@ -30,6 +30,7 @@ public class ScoreManager : MonoBehaviour
     private float timeRemaining;
     private int maxTrashCountTracked = 0;
     private bool isGameOver = false;
+    
 
     private void Awake()
     {
@@ -129,7 +130,7 @@ public class ScoreManager : MonoBehaviour
         if (timerText != null)
         {
             int seconds = Mathf.CeilToInt(timeRemaining);
-            timerText.text = $"Time : {seconds}s";
+            timerText.text = $"{seconds}";
         }
     }
 
