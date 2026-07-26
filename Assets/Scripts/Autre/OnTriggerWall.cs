@@ -8,7 +8,7 @@ public class OnTriggerWall : MonoBehaviour
 
     [SerializeField] private float _opacity = 0.4f;
 
-    private float _wantedOpacity;
+    private float _wantedOpacity = 1f;
 
     private SpriteRenderer sr;
     private int layer = 95;
