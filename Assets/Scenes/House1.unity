@@ -1382,6 +1382,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balai
       objectReference: {fileID: 0}
+    - target: {fileID: 4850737206726417893, guid: b63a264adc419ed49b8a71d40f7bd34b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -49.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850737206726417893, guid: b63a264adc419ed49b8a71d40f7bd34b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73
+      objectReference: {fileID: 0}
     - target: {fileID: 8175969479171520889, guid: b63a264adc419ed49b8a71d40f7bd34b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7343002
@@ -3421,9 +3429,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1019734564003336611, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_Size.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019734564003336611, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
+      propertyPath: m_Size.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019734564003336611, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -605402503153097069, guid: a66667b53428ce544b4ea3a3600a4106, type: 3}
+      objectReference: {fileID: -2167157080828679562, guid: 4f4e2731045344d4cafa0948e3697a47, type: 3}
     - target: {fileID: 1019734564003336611, guid: 2db6927ef37bdf34c9ee82111a12b710, type: 3}
       propertyPath: m_Color.a
       value: 0.49803922
