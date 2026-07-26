@@ -173,6 +173,8 @@ MonoBehaviour:
     soundClass:
     - _clipName: balais
       _clip: {fileID: 8300000, guid: ac96ae5f53c52084db586155ba136336, type: 3}
+    - _clipName: flow
+      _clip: {fileID: 8300000, guid: 42132d201bbf24d40b86db4db9088fc5, type: 3}
     source: {fileID: 8627317670874940970}
 --- !u!82 &8627317670874940970
 AudioSource:
