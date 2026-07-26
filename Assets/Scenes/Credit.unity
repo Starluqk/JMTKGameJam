@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 613280031}
   - component: {fileID: 613280033}
   - component: {fileID: 613280032}
+  - component: {fileID: 613280034}
   m_Layer: 0
   m_Name: Title (1)
   m_TagString: Untagged
@@ -523,6 +524,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613280030}
   m_CullTransparentMesh: 1
+--- !u!114 &613280034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613280030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e2ddbdab24955428195457e9037be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingScript
+  rotationAngle: 2
+  rotationSpeed: 1.5
+  scaleAmplitude: 0.08
+  scaleSpeed: 0.8
 --- !u!1 &648252707
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +643,7 @@ GameObject:
   - component: {fileID: 1353433451}
   - component: {fileID: 1353433453}
   - component: {fileID: 1353433452}
+  - component: {fileID: 1353433454}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -751,6 +769,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353433450}
   m_CullTransparentMesh: 1
+--- !u!114 &1353433454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353433450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e2ddbdab24955428195457e9037be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingScript
+  rotationAngle: 2
+  rotationSpeed: 1
+  scaleAmplitude: 0.03
+  scaleSpeed: 0.8
 --- !u!1 &1487182810
 GameObject:
   m_ObjectHideFlags: 0
