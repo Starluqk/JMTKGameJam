@@ -8,6 +8,17 @@ public class SetRandomTrash : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void SetTrashSelected()
+    {
         int[] trashIdList = new int[trashNumber];
         for (int i = 0; i < trashNumber; )
         {
@@ -57,9 +68,8 @@ public class SetRandomTrash : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetNumberTrash(int nb)
     {
-        
+        trashNumber = nb;
     }
 }

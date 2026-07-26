@@ -705,6 +705,22 @@ PrefabInstance:
       propertyPath: spawnGroups.Array.data[2].minSpawnCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[0].easy.maxSpawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[0].easy.minSpawnCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[1].easy.maxSpawnCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426985305466176024, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
+      propertyPath: spawnGroups.Array.data[1].easy.minSpawnCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7997549562588026365, guid: 33298807db9fd8442ab7e3e3aa48acc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.626

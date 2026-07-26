@@ -5,21 +5,47 @@ using UnityEngine.AI;
 public class NavMeshSpawner : MonoBehaviour
 {
     [System.Serializable]
-    public class SpawnGroup
+    public class DifficultySpawnData
     {
-        public string groupName = "Nouveau Groupe";
-
-        public GameObject[] prefabsToSpawn;
-
-        [Header("Quantité")]
         [Min(0)] public int minSpawnCount = 1;
         [Min(0)] public int maxSpawnCount = 5;
     }
+    [System.Serializable]
+   public class SpawnGroup
+   {
+       public string groupName = "Nouveau Groupe";
+   
+       public GameObject[] prefabsToSpawn;
+      
+   
+       public DifficultySpawnData easy;
+       public DifficultySpawnData normal;
+       public DifficultySpawnData hard;
+   }
+   
+    [System.Serializable]
+    public class DifficultyTrashData
+    {
+        public int easy = 3;
+        public int normal = 2;
+        public int hard = 2;
+    }
+    [SerializeField] private DifficultyTrashData trashData;
+    
+    [System.Serializable]
+    public class DifficultyTime
+    {
+        public float easy = 75f;
+        public float normal = 90f;
+        public float hard = 120f;
+    }
+
+    [SerializeField] private DifficultyTime difficultyData;
 
     [Header("Groupes de Spawns")]
     [SerializeField] private List<SpawnGroup> spawnGroups = new List<SpawnGroup>();
 
-    [Header("Paramètres de Zone")]
+    [Header("Paramï¿½tres de Zone")]
     [SerializeField] private int navMeshAreaMask = NavMesh.AllAreas;
     [SerializeField] private Transform parentContainer;
 
@@ -27,20 +53,31 @@ public class NavMeshSpawner : MonoBehaviour
     [SerializeField] private bool spawnOnStart = true;
 
     private NavMeshTriangulation navMeshTriangulation;
+    private int difficultyLevel;
 
     private void Start()
     {
+        difficultyLevel = gameObject.GetComponent<Difficulty>().GetDifficulty();
+        difficultyLevel--;
+        SetRandomTrash trashes = GetComponent<SetRandomTrash>();
+        trashes.SetNumberTrash(GetTrashNumber());
+        trashes.SetTrashSelected();
+        ScoreManager sM = GetComponent<ScoreManager>();
+        sM.SetGameDuration(GetTimeNumber());
+        sM.StartTimer();
         if (spawnOnStart)
         {
             SpawnAll();
         }
+
+        
     }
 
     public void SpawnAll()
     {
         if (spawnGroups == null || spawnGroups.Count == 0)
         {
-            Debug.LogWarning("[NavMeshSpawner] Aucun groupe de spawn configuré !");
+            Debug.LogWarning("[NavMeshSpawner] Aucun groupe de spawn configurï¿½ !");
             return;
         }
 
@@ -48,7 +85,7 @@ public class NavMeshSpawner : MonoBehaviour
 
         if (navMeshTriangulation.vertices.Length == 0)
         {
-            Debug.LogError("[NavMeshSpawner] Aucun NavMesh trouvé dans la scène ! Avez-vous 'Bake' votre NavMesh ?");
+            Debug.LogError("[NavMeshSpawner] Aucun NavMesh trouvï¿½ dans la scï¿½ne ! Avez-vous 'Bake' votre NavMesh ?");
             return;
         }
 
@@ -62,11 +99,16 @@ public class NavMeshSpawner : MonoBehaviour
     {
         if (group.prefabsToSpawn == null || group.prefabsToSpawn.Length == 0)
         {
-            Debug.LogWarning($"[NavMeshSpawner] Aucun préfab assigné dans le groupe '{group.groupName}' !");
+            Debug.LogWarning($"[NavMeshSpawner] Aucun prï¿½fab assignï¿½ dans le groupe '{group.groupName}' !");
             return;
         }
 
-        int targetSpawnCount = Random.Range(group.minSpawnCount, group.maxSpawnCount + 1);
+        DifficultySpawnData data = GetSpawnData(group);
+
+        int targetSpawnCount = Random.Range(
+            data.minSpawnCount,
+            data.maxSpawnCount + 1
+        );
 
         if (targetSpawnCount <= 0) return;
 
@@ -84,7 +126,7 @@ public class NavMeshSpawner : MonoBehaviour
             }
         }
 
-        Debug.Log($"[NavMeshSpawner] Groupe '{group.groupName}' : Cible = {targetSpawnCount} | Spawns réussis = {successCount}");
+        Debug.Log($"[NavMeshSpawner] Groupe '{group.groupName}' : Cible = {targetSpawnCount} | Spawns rï¿½ussis = {successCount}");
     }
 
     private bool TryGetPointOnEntireNavMesh(out Vector3 result)
@@ -108,5 +150,45 @@ public class NavMeshSpawner : MonoBehaviour
 
         result = (1 - r1) * vertexA + (r1 * (1 - r2)) * vertexB + (r1 * r2) * vertexC;
         return true;
+    }
+    
+    private DifficultySpawnData GetSpawnData(SpawnGroup group)
+    {
+        switch (difficultyLevel)
+        {
+            case 0:
+                return group.easy;
+
+            case 1:
+                return group.normal;
+
+            case 2:
+                return group.hard;
+
+            default:
+                return group.normal;
+        }
+    }
+    
+    private int GetTrashNumber()
+    {
+        switch (difficultyLevel)
+        {
+            case 0: return trashData.easy;
+            case 1: return trashData.normal;
+            case 2: return trashData.hard;
+            default: return trashData.normal;
+        }
+    }
+    
+    private float GetTimeNumber()
+    {
+        switch (difficultyLevel)
+        {
+            case 0: return difficultyData.easy;
+            case 1: return difficultyData.normal;
+            case 2: return difficultyData.hard;
+            default: return difficultyData.normal;
+        }
     }
 }

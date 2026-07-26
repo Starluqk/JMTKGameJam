@@ -44,20 +44,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1f;
-
-        timeRemaining = gameDuration;
-
-        maxTrashCountTracked = CountTrashObjects();
-
-        if (endPanel != null)
-            endPanel.SetActive(false);
-
-        if (victoryPanel != null)
-            victoryPanel.SetActive(false);
-
-        UpdateScoreUI();
-        UpdateTimerUI();
+        
     }
 
     private void Update()
@@ -224,5 +211,28 @@ public class ScoreManager : MonoBehaviour
     public float GetTimeRemaining()
     {
         return timeRemaining;
+    }
+
+    public void SetGameDuration(float time)
+    {
+        gameDuration = time;
+    }
+
+    public void StartTimer()
+    {
+        Time.timeScale = 1f;
+
+        timeRemaining = gameDuration;
+
+        maxTrashCountTracked = CountTrashObjects();
+
+        if (endPanel != null)
+            endPanel.SetActive(false);
+
+        if (victoryPanel != null)
+            victoryPanel.SetActive(false);
+
+        UpdateScoreUI();
+        UpdateTimerUI();
     }
 }
